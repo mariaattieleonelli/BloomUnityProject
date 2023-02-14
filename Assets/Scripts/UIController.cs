@@ -4,6 +4,8 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     public GameObject pausePanel;
+    public GameObject inventoryWindow;
+    public GameObject inventoryBlur;
 
     void Update()
     {
@@ -28,5 +30,19 @@ public class UIController : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void OpenInventory()
+    {
+        Time.timeScale = 0;
+        inventoryWindow.SetActive(true);
+        inventoryBlur.SetActive(true);
+    }
+
+    public void CloseInventory()
+    {
+        Time.timeScale = 1;
+        inventoryWindow.SetActive(false);
+        inventoryBlur.SetActive(false);
     }
 }
