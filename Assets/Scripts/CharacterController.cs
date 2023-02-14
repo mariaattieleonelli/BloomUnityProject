@@ -4,14 +4,10 @@ public class CharacterController : MonoBehaviour
 {
     public float speed;
     private Rigidbody characterRB;
+    public Animator playerAnimator;
     private Vector3 movement;
     private float verticalInput;
     private float horizontalInput;
-
-    private void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -26,6 +22,11 @@ public class CharacterController : MonoBehaviour
         if(movement != Vector3.zero)
         {
             transform.forward = movement;
+            playerAnimator.SetBool("walk", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("walk", false);
         }
     }
 }

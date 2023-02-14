@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c478600ba8fca6745972f6d786dd032c
+guid: da06c2f138a03c547b8d564b4bd0dd15
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -17,14 +17,7 @@ ModelImporter:
     removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 22.265247 mm\n\t'mixamorig:LeftLeg' : position error = 23.340349
-      mm\n\t'mixamorig:LeftFoot' : position error = 11.305170 mm\n\t'mixamorig:LeftToeBase'
-      : position error = 2.310751 mm\n\t'mixamorig:RightUpLeg' : position error =
-      25.934446 mm\n\t'mixamorig:RightLeg' : position error = 23.320913 mm\n\t'mixamorig:RightFoot'
-      : position error = 11.282492 mm\n\t'mixamorig:RightToeBase' : position error
-      = 1.917851 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -40,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Walking
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -57,9 +50,9 @@ ModelImporter:
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
-      heightFromFeet: 0
+      heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
