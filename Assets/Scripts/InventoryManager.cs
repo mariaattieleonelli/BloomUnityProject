@@ -6,10 +6,13 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
+
     public List<Item> items = new List<Item>();
 
     public Transform inventoryContent;
     public GameObject inventoryItem;
+
+    public InventoryItemController[] inventoryItems;
 
     public void Awake()
     {
@@ -40,6 +43,17 @@ public class InventoryManager : MonoBehaviour
 
             itemName.text = item.itemName;
             itemImage.sprite = item.item;
+        }
+
+        SetInventoryItems();
+    }
+
+    public void SetInventoryItems()
+    {
+        inventoryItems = inventoryContent.GetComponentsInChildren<InventoryItemController>();
+        for(int i = 0; i < items.Count; i++)
+        {
+            inventoryItems[i].AddItem(items[i]);
         }
     }
 }

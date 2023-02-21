@@ -15,3 +15,6 @@ MonoBehaviour:
   id: 2
   itemName: Cactus
   item: {fileID: 21300000, guid: 9edda5d4fb382f9469eadabe8b1dd11c, type: 3}
+  value: 5
+  cropPrefab: {fileID: 0}
+  itemType: 0

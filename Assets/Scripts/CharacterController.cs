@@ -1,13 +1,25 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
+    public static CharacterController instance;
+
     public float speed;
     private Rigidbody characterRB;
     public Animator playerAnimator;
     private Vector3 movement;
     private float verticalInput;
     private float horizontalInput;
+
+    public int playerEnergy = 0;
+    public Image imgEnergy;
+
+    private void Awake()
+    {
+        instance = this;
+        imgEnergy.fillAmount = playerEnergy / 100;
+    }
 
     void Update()
     {
@@ -28,5 +40,11 @@ public class CharacterController : MonoBehaviour
         {
             playerAnimator.SetBool("walk", false);
         }
+    }
+
+    public void IncreaseEnergy(int value)
+    {
+        playerEnergy += value;
+        imgEnergy.fillAmount = playerEnergy / 100;
     }
 }

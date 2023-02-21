@@ -15,3 +15,6 @@ MonoBehaviour:
   id: 1
   itemName: Aloe
   item: {fileID: 21300000, guid: 40eeca2e5e667094e89c390316661eb4, type: 3}
+  value: 10
+  cropPrefab: {fileID: 0}
+  itemType: 0
