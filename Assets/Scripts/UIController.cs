@@ -3,9 +3,24 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    public static UIController instance { get; private set; }
+
     public GameObject pausePanel;
     public GameObject inventoryWindow;
     public GameObject inventoryBlur;
+
+    private void Awake()
+    {
+        //si hay otra instancia, destruir la extra
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     void Update()
     {
