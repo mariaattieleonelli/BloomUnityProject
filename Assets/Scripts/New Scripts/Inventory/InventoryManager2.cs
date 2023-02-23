@@ -12,7 +12,7 @@ public class InventoryManager2 : MonoBehaviour
 
     //Espacios de inventario para items e item en mano
     public ItemData[] items = new ItemData[16];
-    public ItemData[] equipedItem = null;
+    public ItemData equipedItem = null;
 
     private void Awake()
     {
