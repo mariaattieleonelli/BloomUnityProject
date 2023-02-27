@@ -40,6 +40,13 @@ public class CharacterController : MonoBehaviour
         {
             playerAnimator.SetBool("walk", false);
         }
+
+        //PARA DEBUGGEAR SOLAMENTE
+        //Adelantamos el tiempo
+        if (Input.GetKey(KeyCode.F))
+        {
+            TimeManager.instance.Tick();
+        }
     }
 
     public void IncreaseEnergy(int value)
