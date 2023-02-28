@@ -19,6 +19,16 @@ public class Timestamp
         this.hour = hour;
     }
 
+    //Creamos una instancia de un time stamp existente
+    public Timestamp(Timestamp timeStamp)
+    {
+        this.year = timeStamp.year;
+        this.season = timeStamp.season;
+        this.day = timeStamp.day;
+        this.minute = timeStamp.minute;
+        this.hour = timeStamp.hour;
+    }
+
     //Incremente el tiempo en 1 minuto
     public void UpdateClock()
     {
@@ -99,6 +109,16 @@ public class Timestamp
         return years * 4 * 30;
     }
 
+    //Función que determina la diferencia de horas entre dos timestamps
+    public static int CompareTimestamps(Timestamp timestamp1, Timestamp timestamp2)
+    {
+        //Convertimos timestamp a horas
+        int timestamp1Hours = DaysToHours(YearsToDays(timestamp1.year)) + DaysToHours(SeasonsToDays(timestamp1.season)) + DaysToHours(timestamp1.day) + timestamp1.hour;
+        int timestamp2Hours = DaysToHours(YearsToDays(timestamp2.year)) + DaysToHours(SeasonsToDays(timestamp2.season)) + DaysToHours(timestamp2.day) + timestamp2.hour;
+        int hoursDifference = timestamp2Hours - timestamp1Hours;
+        return Mathf.Abs(hoursDifference);
+    }
+
     public enum Season
     {
         SPRING,
@@ -110,12 +130,12 @@ public class Timestamp
     public enum DayOfTheWeek
     {
         //Empezamos el enum por sábado para que el día 1 de la semana sea domingo
-        SATURDAY,
-        SUNDAY,
-        MONDAY,
-        TUESDAY,
-        WEDNESDAY,
-        THURSDAY,
-        FRIDAY
+        SABADO,
+        DOMINGO,
+        LUNES,
+        MARTES,
+        MIERCOLES,
+        JUEVES,
+        VIERNES
     }
 }

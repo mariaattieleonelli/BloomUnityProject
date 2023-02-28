@@ -9,7 +9,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     ItemData itemName;
 
     public Image itemDisplayImage;
-    public  TextMeshProUGUI itemNameText;
+    public TextMeshProUGUI itemNameText;
 
     int slotIndex;
 

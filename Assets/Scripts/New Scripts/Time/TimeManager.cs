@@ -16,7 +16,7 @@ public class TimeManager : MonoBehaviour
     Timestamp timeStamp;
 
     //Lista de objetos a los que hay que informarles de los cambios en el tiempo
-    List<ITimeTracker> listeners;
+    List<ITimeTracker> listeners = new List<ITimeTracker>();
 
     private void Awake()
     {
@@ -42,8 +42,8 @@ public class TimeManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1/timeScale);
             Tick();
+            yield return new WaitForSeconds(1/timeScale);
         }  
     }
 
@@ -76,8 +76,14 @@ public class TimeManager : MonoBehaviour
         sunTransform.eulerAngles = new Vector3(sunAngle, 0, 0);
     }
 
-    //Manejo de los listeners
+    //Tomamos el timeStamp
+    public Timestamp GetTimeStamp()
+    {
+        //Devuelve una instancia clon
+        return new Timestamp(timeStamp);
+    }
 
+    //Manejo de los listeners
     //Añade objetos a la lista de objetos que quieren saber sobre timeStamp
     public void RegisterTracker(ITimeTracker listener)
     {

@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoBehaviour, ITimeTracker
 {
     public static UIManager instance { get; private set; }
 
@@ -10,6 +11,18 @@ public class UIManager : MonoBehaviour
     public InventorySlot[] itemSlots;
 
     public Image toolEquipSlot;
+
+    public Sprite daySprite;
+    public Sprite nightSprite;
+    public Sprite winterSprite;
+    public Sprite fallSprite;
+    public Sprite summerSprite;
+    public Sprite springSprite;
+
+    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI dateText;
+    private Image dayTimeImage;
+    private Image seasonImage;
 
     public GameObject inventorypanel;
 
@@ -36,6 +49,9 @@ public class UIManager : MonoBehaviour
     {
         RenderInventory();
         AssignSlotIndexes();
+
+        //Añadimos al UIManager a la lista de objetos a los que se le notifican cambios en el paso del tiempo
+        TimeManager.instance.RegisterTracker(this);
     }
 
     //Itera sobre los slots de la UI y les asigna el índice adecuado a su referencia
@@ -100,5 +116,36 @@ public class UIManager : MonoBehaviour
         inventorypanel.SetActive(!inventorypanel.activeSelf);
 
         RenderInventory();
+    }
+
+    //Nos traemos a esta función el timeStamp
+    public void ClockUpdate(Timestamp timeStamp)
+    {
+        //Ajuste del tiempo para mostrarse en UI
+
+        //Tomamos horas y minutos
+        int hours = timeStamp.hour;
+        int minutes = timeStamp.minute;
+
+        string sufix = "am";
+
+        //Convertimos a reloj de 12 horas
+        if(hours > 12)
+        {
+            hours -= 12;
+        }
+
+        if(hours >= 12)
+            sufix = "pm";
+
+        //Mostramos hora en la UI
+        timeText.text = hours + ":" + minutes.ToString("00") + " " + sufix;
+
+        //Manejo de la fecha
+        int day = timeStamp.day;
+        string dayOfTheWeek = timeStamp.GetDayOfTheWeek().ToString();
+
+        //Mostramos la fecha en la UI
+        dateText.text = dayOfTheWeek + " " + day;
     }
 }
