@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff45dd75d2cc7a94899d9fe6ad94201e, type: 3}
-  m_Name: WaterCan
+  m_Script: {fileID: 11500000, guid: f76551796a94d8346a1bf71589e5bafa, type: 3}
+  m_Name: ChamomileItem
   m_EditorClassIdentifier: 
-  itemName: Regadera
-  itemIcon: {fileID: 21300000, guid: 90e7bc8a572fdef40ace731757951aa8, type: 3}
-  gameModel: {fileID: 919132149155446097, guid: 63681df827b5d5e47acf64413f75fdb6,
+  itemName: 
+  itemIcon: {fileID: 21300000, guid: b9e48f7148a32944281cb013f98acf0c, type: 3}
+  gameModel: {fileID: 4824561077423097876, guid: 1624e3a96a9dc2e448f6f2209676b85a,
     type: 3}
-  toolType: 1

@@ -12,6 +12,10 @@ public class Land : MonoBehaviour, ITimeTracker
 
     public LandStatus landStatus;
 
+    [Header("Crops")]
+    public GameObject cropPrefab;
+    CropBehaviour cropPlanted = null;
+
     //Aquí atrapamos el tiempo en el que fue regada a tierra
     Timestamp timeWatered;
 
@@ -58,10 +62,16 @@ public class Land : MonoBehaviour, ITimeTracker
     private void OnMouseDown()
     {
         //Checamos la herramienta que se tiene en la mano
-        ItemData tooSlot = InventoryManager2.instance.equipedTool;
+        ItemData toolSlot = InventoryManager2.instance.equipedTool;
+
+        //Si no se tiene nada equipado, terminamos la función
+        if(toolSlot == null)
+        {
+            return;
+        }
 
         //Intentamos castear la info del item en el slot equipado
-        ToolsData equipementTool = tooSlot as ToolsData;
+        ToolsData equipementTool = toolSlot as ToolsData;
 
         if(equipementTool != null)
         {
@@ -76,6 +86,27 @@ public class Land : MonoBehaviour, ITimeTracker
                     SwitchLandStatus(LandStatus.WATERED);
                     break;
             }
+            return;
+        }
+
+        //Intentamos castear la info de la semilla equipada en el slot de equipado
+        SeedData seedTool = toolSlot as SeedData;
+
+        //Las condiciones para que se pueda plantar una semilla son:
+        //Se está usando una bolsa de semillas (objeto tipo SeedData)
+        //El estado de la tierra debe estar listo para sembrar o regado
+        //No hay otra planta sembrada
+        if(seedTool != null && landStatus != LandStatus.SOIL && cropPlanted == null)
+        {
+            //Instanciamos el el objeto prefab crop
+            GameObject cropObject = Instantiate(cropPrefab, transform);
+            //Movemos el prefab a la posición que queremos
+            cropObject.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
+            //Accedemos al comportamiento de la planta que vamos a crear
+            cropPlanted = cropObject.GetComponent<CropBehaviour>();
+            //Plantamos la planta
+            cropPlanted.Plant(seedTool);
         }
     }
 
@@ -102,6 +133,12 @@ public class Land : MonoBehaviour, ITimeTracker
         {
             //Horas desde que se regó
             int hoursPassed = Timestamp.CompareTimestamps(timeWatered, timestamp);
+
+            //Crecimiento de la planta
+            if(cropPlanted != null)
+            {
+                cropPlanted.Grow();
+            }
             
             //Regresamos al estado de tierra seca si pasaron las 24 horas
             if(hoursPassed > 24)

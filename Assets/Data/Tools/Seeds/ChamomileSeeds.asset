@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29a0d0859c137f141bf753e0c89cbb5b, type: 3}
-  m_Name: AloeSeeds
+  m_Name: ChamomileSeeds
   m_EditorClassIdentifier: 
-  itemName: Semillas de aloe
-  itemIcon: {fileID: 21300000, guid: 18740a97ea6a8ab4f85741988698d5d8, type: 3}
+  itemName: Semillas de manzanilla
+  itemIcon: {fileID: 21300000, guid: 954618dbfa270584988cda9e227c0a1b, type: 3}
   gameModel: {fileID: 0}
-  daysToGrow: 1
-  objectToGrow: {fileID: 11400000, guid: 8b318be574d80a94282db84bf2c806a7, type: 2}
+  daysToGrow: 3
+  objectToGrow: {fileID: 11400000, guid: 05215d26a275538499586afd34c44273, type: 2}
   sprout: {fileID: 2167145622138266516, guid: 0a297d0c246ab124f8a9ed9090dcf9fd, type: 3}

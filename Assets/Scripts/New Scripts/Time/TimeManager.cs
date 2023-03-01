@@ -52,6 +52,9 @@ public class TimeManager : MonoBehaviour
     {
         timeStamp.UpdateClock();
 
+        //Convertimos el tiempo a minutos
+        int timeInMinutes = Timestamp.HoursToMinutes(timeStamp.hour) + timeStamp.minute;
+
         //Informamos a los listeners sobre el nuevo estado del timeStamp
         foreach(ITimeTracker listener in listeners)
         {

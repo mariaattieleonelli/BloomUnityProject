@@ -214,3 +214,5 @@ MonoBehaviour:
   soilSelector: {fileID: 3505501244639284104}
   soilPatchRenderer: {fileID: 0}
   landStatus: 0
+  cropPrefab: {fileID: 4937059579975597407, guid: 9f04ac39e381ffb4ca1129d1e61a73e4,
+    type: 3}

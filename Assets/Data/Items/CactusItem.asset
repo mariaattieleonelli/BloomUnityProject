@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff45dd75d2cc7a94899d9fe6ad94201e, type: 3}
-  m_Name: WaterCan
+  m_Script: {fileID: 11500000, guid: f76551796a94d8346a1bf71589e5bafa, type: 3}
+  m_Name: CactusItem
   m_EditorClassIdentifier: 
-  itemName: Regadera
-  itemIcon: {fileID: 21300000, guid: 90e7bc8a572fdef40ace731757951aa8, type: 3}
-  gameModel: {fileID: 919132149155446097, guid: 63681df827b5d5e47acf64413f75fdb6,
+  itemName: 
+  itemIcon: {fileID: 21300000, guid: 9edda5d4fb382f9469eadabe8b1dd11c, type: 3}
+  gameModel: {fileID: 5248801034035115915, guid: 5949dcf2b50c7534c9d816c33e27f3e7,
     type: 3}
-  toolType: 1
