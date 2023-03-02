@@ -5,6 +5,10 @@ public class CharacterController : MonoBehaviour
 {
     public static CharacterController instance;
 
+    //Raycast del mouse
+    private RaycastHit mouseHit;
+    private Ray mouseRay;
+
     public float speed;
     private Rigidbody characterRB;
     public Animator playerAnimator;
@@ -14,6 +18,9 @@ public class CharacterController : MonoBehaviour
 
     public int playerEnergy = 0;
     public Image imgEnergy;
+
+    //Hace referencia al objeto que se quiere recoger
+    InteractableObject selectedInteractable = null;
 
     private void Awake()
     {
@@ -47,16 +54,41 @@ public class CharacterController : MonoBehaviour
         {
             TimeManager.instance.Tick();
         }
+
+        if(Input.GetButtonDown("Fire2"))
+        { 
+            ItemInteract();
+        }
     }
 
-    private void OnMouseDown()
+    private void ItemInteract()
     {
         //Si se tiene algo en la mano, se deja en el inventario
         if (InventoryManager2.instance.equipedItem != null)
         {
             InventoryManager2.instance.HandToInventory(InventorySlot.InventoryType.Item);
+            return;
+        }
+
+        mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(mouseRay, out mouseHit, 150f))
+        {
+
+            if (mouseHit.transform.tag == "planta")
+            {
+                Debug.Log("Soy planta");
+                selectedInteractable = mouseHit.transform.GetComponent<InteractableObject>();
+                
+                selectedInteractable.PickupItem();
+            }
+
+            if (selectedInteractable != null)
+            {
+                selectedInteractable = null;
+            }
         }
     }
+
 
     //Pertenece al primer intento
     //public void IncreaseEnergy(int value)
