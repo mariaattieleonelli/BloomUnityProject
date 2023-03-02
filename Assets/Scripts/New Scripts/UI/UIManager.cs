@@ -133,10 +133,8 @@ public class UIManager : MonoBehaviour, ITimeTracker
         if(hours > 12)
         {
             hours -= 12;
-        }
-
-        if(hours >= 12)
             sufix = "pm";
+        }
 
         //Mostramos hora en la UI
         timeText.text = hours + ":" + minutes.ToString("00") + " " + sufix;

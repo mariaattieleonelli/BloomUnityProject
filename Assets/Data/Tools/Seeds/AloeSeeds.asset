@@ -17,4 +17,4 @@ MonoBehaviour:
   gameModel: {fileID: 0}
   daysToGrow: 1
   objectToGrow: {fileID: 11400000, guid: 8b318be574d80a94282db84bf2c806a7, type: 2}
-  sprout: {fileID: 2167145622138266516, guid: 0a297d0c246ab124f8a9ed9090dcf9fd, type: 3}
+  sprout: {fileID: 3329144371968240942, guid: 10e09bfff76f5f94ca914ab6db7a6e17, type: 3}

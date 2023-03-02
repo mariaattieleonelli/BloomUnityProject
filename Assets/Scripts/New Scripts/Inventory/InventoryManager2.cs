@@ -12,6 +12,8 @@ public class InventoryManager2 : MonoBehaviour
     public ItemData[] items = new ItemData[9];
     public ItemData equipedItem = null;
 
+    public Transform playersHand;
+
     private void Awake()
     {
         //si hay otra instancia, destruir la extra
@@ -38,6 +40,9 @@ public class InventoryManager2 : MonoBehaviour
 
             //Cambiamos lo que estaba en la mano al inventario (la información que tomamos al inicio)
             equipedItem = itemToEquip;
+
+            //Actualiza el item en mano
+            RenderHandItem();
         }
         else
         {
@@ -53,6 +58,22 @@ public class InventoryManager2 : MonoBehaviour
 
         //Actualizamos los cambios a la UI mediante UIManager
         UIManager.instance.RenderInventory();
+    }
+
+    //Muestra el objeto que se tiene equipado en la mano del personaje
+    public void RenderHandItem()
+    {
+        //Si se tiene algo en la mano, eliminamos el objeto
+        if(playersHand.childCount > 0)
+        {
+            Destroy(playersHand.GetChild(0).gameObject);
+        }
+
+        //Checamos si se tiene algo equipado
+        if(equipedItem != null)
+        {
+            Instantiate(equipedItem.gameModel, playersHand);
+        }
     }
 
     //Movimiento de items del equipado al inventario
@@ -71,7 +92,10 @@ public class InventoryManager2 : MonoBehaviour
                     equipedItem = null;
                     break;
                 }
-            }    
+            }
+
+            //Actualiza el item en mano
+            RenderHandItem();
         }
         else
         {

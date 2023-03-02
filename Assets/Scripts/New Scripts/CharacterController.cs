@@ -49,9 +49,20 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public void IncreaseEnergy(int value)
+    private void OnMouseDown()
     {
-        playerEnergy += value;
-        imgEnergy.fillAmount = playerEnergy / 100;
+        //Si se tiene algo en la mano, se deja en el inventario
+        if (InventoryManager2.instance.equipedItem != null)
+        {
+            InventoryManager2.instance.HandToInventory(InventorySlot.InventoryType.Item);
+        }
     }
+
+    //Pertenece al primer intento
+    //public void IncreaseEnergy(int value)
+    //{
+    //    playerEnergy += value;
+    //    imgEnergy.fillAmount = playerEnergy / 100;
+    //}
+
 }
