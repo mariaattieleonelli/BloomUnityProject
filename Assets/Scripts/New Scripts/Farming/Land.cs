@@ -42,14 +42,26 @@ public class Land : MonoBehaviour, ITimeTracker
             case LandStatus.SOIL:
                 //Cambia al material de tierra normal
                 materialToSwitch = soilMat;
+                if(cropPlanted != null)
+                {
+                    cropPlanted.water.SetActive(false);
+                }
                 break;
             case LandStatus.PLANTABLE:
                 //Cambia al material de tierra plantable
                 materialToSwitch = plantableSoilMat;
+                if (cropPlanted != null)
+                {
+                    cropPlanted.water.SetActive(false);
+                }
                 break;
             case LandStatus.WATERED:
                 //Cambia al material de tierra regada
                 materialToSwitch = wateredSoilMat;
+                if(cropPlanted != null && (cropPlanted.cropState == CropBehaviour.CropState.SPROUT || cropPlanted.cropState == CropBehaviour.CropState.HARVESTABLE))
+                {
+                    cropPlanted.water.SetActive(true);
+                }
                 timeWatered = TimeManager.instance.GetTimeStamp();
                 break;
         }

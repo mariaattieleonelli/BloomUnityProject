@@ -9,6 +9,7 @@ public class CropBehaviour : MonoBehaviour
 
     //Objetos que indican las etapas de crecimiento de la planta
     public GameObject seed;
+    public GameObject water;
     private GameObject sprout;
     private GameObject harvestable;
 
@@ -63,6 +64,7 @@ public class CropBehaviour : MonoBehaviour
     {
         //Reseteamos todos los game objects a estado de inactivos
         seed.SetActive(false);
+        water.SetActive(false);
         sprout.SetActive(false);
         harvestable.SetActive(false);
 
