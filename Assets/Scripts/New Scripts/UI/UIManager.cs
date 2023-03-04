@@ -21,8 +21,8 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dateText;
-    private Image dayTimeImage;
-    private Image seasonImage;
+    public Image dayTimeImage;
+    public Image seasonImage;
 
     public GameObject inventorypanel;
 
@@ -127,10 +127,19 @@ public class UIManager : MonoBehaviour, ITimeTracker
         int hours = timeStamp.hour;
         int minutes = timeStamp.minute;
 
+
         string sufix = "am";
+        dayTimeImage.sprite = daySprite;
+
+        //Se coloca la imagen de noche en la UI de day time
+        if (hours > 19)
+        {
+            hours -= 12;
+            dayTimeImage.sprite = nightSprite;
+        }
 
         //Convertimos a reloj de 12 horas
-        if(hours > 12)
+        if (hours > 12)
         {
             hours -= 12;
             sufix = "pm";
@@ -138,6 +147,9 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
         //Mostramos hora en la UI
         timeText.text = hours + ":" + minutes.ToString("00") + " " + sufix;
+
+        //Cambio de imagen dependiendo de la temporada
+
 
         //Manejo de la fecha
         int day = timeStamp.day;

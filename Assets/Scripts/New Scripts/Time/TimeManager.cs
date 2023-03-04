@@ -34,7 +34,7 @@ public class TimeManager : MonoBehaviour
     //Inicializamos el time stamp
     private void Start()
     {
-        timeStamp = new Timestamp(0, Timestamp.Season.SPRING, 1, 6, 0);
+        timeStamp = new Timestamp(0, Timestamp.Season.SPRING, 1, 8, 0);
         StartCoroutine(TimeUpdate());
     }
 
