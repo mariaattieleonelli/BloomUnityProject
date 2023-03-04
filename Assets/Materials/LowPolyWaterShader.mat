@@ -107,10 +107,10 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Metalic: 6
+    - _Metalic: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Oclussion: 0
+    - _Oclussion: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -120,8 +120,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Transparency: 0.8
-    - _WaveHeight: 4
+    - _Transparency: 0.6
+    - _WaveHeight: 2
     - _WaveSpeed: 0.1
     - _WaveStrenght: 2
     - _WorkflowMode: 1
