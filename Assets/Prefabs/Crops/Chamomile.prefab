@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -406817604387697111}
   m_Layer: 6
   m_Name: Chamomile
-  m_TagString: planta
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

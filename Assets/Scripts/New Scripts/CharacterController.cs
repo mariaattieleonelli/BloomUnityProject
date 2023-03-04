@@ -74,9 +74,8 @@ public class CharacterController : MonoBehaviour
         if (Physics.Raycast(mouseRay, out mouseHit, 150f))
         {
 
-            if (mouseHit.transform.tag == "planta")
+            if (mouseHit.transform.tag == "item")
             {
-                Debug.Log("Soy planta");
                 selectedInteractable = mouseHit.transform.GetComponent<InteractableObject>();
                 
                 selectedInteractable.PickupItem();
