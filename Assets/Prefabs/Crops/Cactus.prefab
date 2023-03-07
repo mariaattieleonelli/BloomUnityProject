@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 1528621725303322848}
   m_Layer: 6
   m_Name: Cactus
-  m_TagString: item
+  m_TagString: planta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

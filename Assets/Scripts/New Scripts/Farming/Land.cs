@@ -93,8 +93,12 @@ public class Land : MonoBehaviour, ITimeTracker
             {
                 case ToolsData.ToolType.shovel:
                     SwitchLandStatus(LandStatus.PLANTABLE);
+                    //Suena audio de pala
+                    AudioManager.instance.ShovelSound();
                     break;
                 case ToolsData.ToolType.waterCan:
+                    //Suena audio de agua
+                    AudioManager.instance.WaterSound();
                     SwitchLandStatus(LandStatus.WATERED);
                     break;
             }
@@ -119,6 +123,8 @@ public class Land : MonoBehaviour, ITimeTracker
             cropPlanted = cropObject.GetComponent<CropBehaviour>();
             //Plantamos la planta
             cropPlanted.Plant(seedTool);
+            //Sonamos sonido de semilla
+            AudioManager.instance.SeedSound();
         }
     }
 

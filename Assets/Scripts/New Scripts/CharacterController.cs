@@ -74,11 +74,16 @@ public class CharacterController : MonoBehaviour
         if (Physics.Raycast(mouseRay, out mouseHit, 150f))
         {
 
-            if (mouseHit.transform.tag == "item")
+            if (mouseHit.transform.tag == "item" || mouseHit.transform.tag == "planta")
             {
                 selectedInteractable = mouseHit.transform.GetComponent<InteractableObject>();
                 
                 selectedInteractable.PickupItem();
+                //Si es planta, suena el efecto de cosechar
+                if(mouseHit.transform.tag == "planta")
+                {
+                    AudioManager.instance.HarvestSound();
+                }
             }
 
             if (selectedInteractable != null)
