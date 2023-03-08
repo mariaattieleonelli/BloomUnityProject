@@ -5,6 +5,7 @@ public class Land : MonoBehaviour, ITimeTracker
     public Material soilMat;
     public Material plantableSoilMat;
     public Material wateredSoilMat;
+    public GameObject water;
 
     public GameObject soilSelector;
 
@@ -33,6 +34,7 @@ public class Land : MonoBehaviour, ITimeTracker
 
     public void SwitchLandStatus(LandStatus statusToSwitch)
     {
+        water.SetActive(false);
         landStatus = statusToSwitch;
         Material materialToSwitch = soilMat;
 
@@ -42,26 +44,16 @@ public class Land : MonoBehaviour, ITimeTracker
             case LandStatus.SOIL:
                 //Cambia al material de tierra normal
                 materialToSwitch = soilMat;
-                if(cropPlanted != null)
-                {
-                    cropPlanted.water.SetActive(false);
-                }
                 break;
             case LandStatus.PLANTABLE:
                 //Cambia al material de tierra plantable
                 materialToSwitch = plantableSoilMat;
-                if (cropPlanted != null)
-                {
-                    cropPlanted.water.SetActive(false);
-                }
                 break;
             case LandStatus.WATERED:
                 //Cambia al material de tierra regada
                 materialToSwitch = wateredSoilMat;
-                if(cropPlanted != null && (cropPlanted.cropState == CropBehaviour.CropState.SPROUT || cropPlanted.cropState == CropBehaviour.CropState.HARVESTABLE))
-                {
-                    cropPlanted.water.SetActive(true);
-                }
+                //Si la planta está en estado de haberse regado, se activa el efecto de agua cayendo
+                water.SetActive(true);
                 timeWatered = TimeManager.instance.GetTimeStamp();
                 break;
         }
@@ -162,6 +154,17 @@ public class Land : MonoBehaviour, ITimeTracker
             if(hoursPassed > 24)
             {
                 SwitchLandStatus(LandStatus.PLANTABLE);
+            }
+        }
+
+        //Si se plantó una planta y la tierra no está regada
+        if(landStatus != LandStatus.WATERED && cropPlanted != null)
+        {
+            //Y si la semilla ya germinó
+            if(cropPlanted.cropState != CropBehaviour.CropState.SEED)
+            {
+                //Empezamos el proceso de "muerte" de la planta
+                cropPlanted.Wither();
             }
         }
     }

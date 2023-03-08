@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3545033602353319050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7725829999733045218}
+  - component: {fileID: 3898330462783696023}
+  m_Layer: 6
+  m_Name: Wilted Plant
+  m_TagString: plantaMuerta
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7725829999733045218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545033602353319050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.074, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3727990845376232878}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3898330462783696023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545033602353319050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2451968, y: 0.501433, z: 1.3351023}
+  m_Center: {x: -0.05721262, y: 0.10216537, z: -0.028606296}
+--- !u!1001 &3762408468589550149
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7725829999733045218}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16534248
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0076281363
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.24194948
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6952216
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.40689033
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.020279417
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.59219587
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22529c4f28a6372499b25e855b8f6019,
+        type: 3}
+      propertyPath: m_Name
+      value: Dead Plant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22529c4f28a6372499b25e855b8f6019, type: 3}
+--- !u!4 &3727990845376232878 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22529c4f28a6372499b25e855b8f6019,
+    type: 3}
+  m_PrefabInstance: {fileID: 3762408468589550149}
+  m_PrefabAsset: {fileID: 0}

@@ -9,12 +9,16 @@ public class CropBehaviour : MonoBehaviour
 
     //Objetos que indican las etapas de crecimiento de la planta
     public GameObject seed;
-    public GameObject water;
+    public GameObject wiltedPlant;
     private GameObject sprout;
     private GameObject harvestable;
 
     int growth;
     int maxGrowth;
+
+    //Establecemos la "vida" de una planta, para cuando se seca
+    int plantMaxHealth = Timestamp.HoursToMinutes(48);
+    int plantHealth;
 
     public CropState cropState;
 
@@ -47,6 +51,12 @@ public class CropBehaviour : MonoBehaviour
         //Aumentamos los "puntos" de crecimiento de la planta
         growth++;
 
+        //Cuando crece significa que la regamos, así que aumenta su salud
+        if(plantHealth < plantMaxHealth)
+        {
+            plantMaxHealth++;
+        }
+
         //El retoño saldrá cuando se tenga la mitad del tiempo de crecimiento total de la planta
         if(growth >= maxGrowth/2 && cropState == CropState.SEED)
         {
@@ -59,12 +69,23 @@ public class CropBehaviour : MonoBehaviour
         }
     }
 
+    //Cuando no se riega va perdiendo vida
+    public void Wither()
+    {
+        plantHealth--;
+        //Si la vida es menor a 0, significa que murió
+        if(plantHealth < 0 && cropState != CropState.SEED)
+        {
+            SwitchState(CropState.WILTED);
+        }
+    }
+
     //Manejamos los cambios de estado de crecimiento
     void SwitchState(CropState stateToSwitch)
     {
         //Reseteamos todos los game objects a estado de inactivos
         seed.SetActive(false);
-        water.SetActive(false);
+        wiltedPlant.SetActive(false);
         sprout.SetActive(false);
         harvestable.SetActive(false);
 
@@ -75,6 +96,8 @@ public class CropBehaviour : MonoBehaviour
                 break;
             case CropState.SPROUT:
                 sprout.SetActive(true);
+                //Se le asigna máxima vida a la planta
+                plantHealth = plantMaxHealth;
                 break;
             case CropState.HARVESTABLE:
                 harvestable.SetActive(true);
@@ -82,6 +105,9 @@ public class CropBehaviour : MonoBehaviour
                 harvestable.transform.parent = null;
                 //Destruimos el padre para quedarnos solamente con la planta
                 Destroy(gameObject);
+                break;
+            case CropState.WILTED:
+                wiltedPlant.SetActive(true);
                 break;
         }
 
@@ -91,6 +117,6 @@ public class CropBehaviour : MonoBehaviour
 
     public enum CropState
     {
-        SEED, SPROUT, HARVESTABLE
+        SEED, SPROUT, HARVESTABLE, WILTED
     }
 }

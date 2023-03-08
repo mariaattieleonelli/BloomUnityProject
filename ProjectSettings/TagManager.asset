@@ -6,6 +6,7 @@ TagManager:
   tags:
   - planta
   - item
+  - plantaMuerta
   layers:
   - Default
   - TransparentFX

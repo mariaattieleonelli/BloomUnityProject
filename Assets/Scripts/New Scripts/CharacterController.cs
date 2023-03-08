@@ -90,6 +90,12 @@ public class CharacterController : MonoBehaviour
             {
                 selectedInteractable = null;
             }
+
+            if(mouseHit.transform.tag == "plantaMuerta")
+            {
+                Destroy(mouseHit.transform.gameObject);
+                AudioManager.instance.ShovelSound();
+            }
         }
     }
 
