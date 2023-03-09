@@ -1691,7 +1691,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 264195007}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 581550677}
+        m_TargetAssemblyTypeName: LandManager, Assembly-CSharp
+        m_MethodName: SaveFarmData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &264195007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2525,8 +2537,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.003947115, y: 0.9598325, z: -0.28022012, w: 0.013519974}
-  m_LocalPosition: {x: 11.080068, y: 8.683483, z: 12.6064625}
+  m_LocalRotation: {x: 0.0027252461, y: -0.9706541, z: 0.24021254, w: 0.011012211}
+  m_LocalPosition: {x: 11.91, y: 4.38, z: 4.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4072,8 +4084,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581550676}
+  - component: {fileID: 581550677}
   m_Layer: 0
-  m_Name: Soil
+  m_Name: Plantable Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4109,6 +4122,20 @@ Transform:
   m_Father: {fileID: 930481959}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581550677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581550675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f6e627d0971414f8a4f73f8f47bf34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landData: []
+  landPlots: []
 --- !u!1 &608531003
 GameObject:
   m_ObjectHideFlags: 0
@@ -15486,6 +15513,7 @@ MonoBehaviour:
   dayTimeImage: {fileID: 1466520888}
   seasonImage: {fileID: 0}
   inventorypanel: {fileID: 1963980672}
+  pausePanel: {fileID: 733979993}
   toolHandSlot: {fileID: 1872124440}
   itemHandSlot: {fileID: 289856703}
 --- !u!4 &2013524577

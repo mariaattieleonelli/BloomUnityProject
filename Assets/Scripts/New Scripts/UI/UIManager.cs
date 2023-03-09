@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public Image seasonImage;
 
     public GameObject inventorypanel;
+    public GameObject pausePanel;
 
     //Es el slot donde se equipa la herramienta en la UI del inventario
     public HandInventorySlot toolHandSlot;
@@ -52,6 +53,14 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
         //Añadimos al UIManager a la lista de objetos a los que se le notifican cambios en el paso del tiempo
         TimeManager.instance.RegisterTracker(this);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            TogglePausePanel();
+        }
     }
 
     //Itera sobre los slots de la UI y les asigna el índice adecuado a su referencia
@@ -116,6 +125,11 @@ public class UIManager : MonoBehaviour, ITimeTracker
         inventorypanel.SetActive(!inventorypanel.activeSelf);
 
         RenderInventory();
+    }
+
+    public void TogglePausePanel()
+    {
+        pausePanel.SetActive(!pausePanel.activeSelf);
     }
 
     //Nos traemos a esta función el timeStamp

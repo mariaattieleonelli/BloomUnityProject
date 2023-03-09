@@ -11,6 +11,7 @@ public class Land : MonoBehaviour, ITimeTracker
 
     public Renderer soilPatchRenderer;
 
+    public int id;
     public LandStatus landStatus;
 
     [Header("Crops")]
@@ -30,6 +31,37 @@ public class Land : MonoBehaviour, ITimeTracker
 
         //Agregamos al listener de TimeManager
         TimeManager.instance.RegisterTracker(this);
+    }
+
+    //Función para cargar la información de land data
+    public void LoadLandData(LandStatus statusToSwitch, Timestamp lastWatered)
+    {
+        landStatus = statusToSwitch;
+        timeWatered = lastWatered;
+
+        Material materialToSwitch = soilMat;
+
+        //Decidimos a qué material se cambia
+        switch (statusToSwitch)
+        {
+            case LandStatus.SOIL:
+                //Cambia al material de tierra normal
+                materialToSwitch = soilMat;
+                break;
+            case LandStatus.PLANTABLE:
+                //Cambia al material de tierra plantable
+                materialToSwitch = plantableSoilMat;
+                break;
+            case LandStatus.WATERED:
+                //Cambia al material de tierra regada
+                materialToSwitch = wateredSoilMat;
+                //Si la planta está en estado de haberse regado, se activa el efecto de agua cayendo
+                water.SetActive(true);
+                break;
+        }
+
+        //Aplicamos el material al renderer
+        soilPatchRenderer.material = materialToSwitch;
     }
 
     public void SwitchLandStatus(LandStatus statusToSwitch)
@@ -60,6 +92,8 @@ public class Land : MonoBehaviour, ITimeTracker
 
         //Aplicamos el material al renderer
         soilPatchRenderer.material = materialToSwitch;
+
+        LandManager.instance.OnLandStateChange(id, landStatus, timeWatered);
     }
 
     //Al seleccionar el parche de tierra con el mouse
