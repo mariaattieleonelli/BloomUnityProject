@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,10 +11,10 @@ public class LandManager : MonoBehaviour
     public static Tuple<List<LandSaveState>, List<CropSaveState>> farmData = null;
 
     //El estado de guardado de los espacios de tierra y cultivos
-    public List<LandSaveState> landData = new List<LandSaveState>();
+    List<LandSaveState> landData = new List<LandSaveState>();
     List<CropSaveState> cropData = new List<CropSaveState>();
 
-    public List<Land> landPlots = new List<Land>();
+    List<Land> landPlots = new List<Land>();
 
     private void Awake()
     {
@@ -28,14 +29,22 @@ public class LandManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    void OnEnable()
     {
         RegisterLandPlots();
+        //Con esta corrutina esperamos a que primero cargue todo antes de querer darle la farm data
+        StartCoroutine(LoadFarmData());
+    }
 
+    IEnumerator LoadFarmData()
+    {
+        yield return new WaitForEndOfFrame();
         //Si farm data tiene información, la cargamos
-        if(farmData != null)
+        if (farmData != null)
         {
             //Carga la información guardada
+            ImportLandData(farmData.Item1); //El item 1 de la tupla, que trae la información de la tierra
+            ImportCropData(farmData.Item2); //El item 2 de la tupla, que trae la información de los cultivos
         }
     }
 
@@ -67,6 +76,29 @@ public class LandManager : MonoBehaviour
         landData[id] = new LandSaveState(landStatus, lastWatered);
     }
 
+    //Registra el cultivo en la lista
+    public void RegisterCrop(int landId, SeedData seedToGrow, CropBehaviour.CropState cropState, int growth, int plantHealth)
+    {
+        cropData.Add(new CropSaveState(landId, seedToGrow.name, cropState, growth, plantHealth));
+    }
+
+    //Elimina el cultivo de la lista
+    public void DeregisterCrop(int landId)
+    {
+        //Encuentra su indice en la lista y lo elimina
+        cropData.RemoveAll(x => x.landPlotId == landId);
+    }
+
+    //Actualizamos la crop data con cada cambio en el land state
+    public void OnCropStateChange(int landId, CropBehaviour.CropState cropState, int growth, int plantHealth)
+    {
+        //Encuentra su indice en la lista
+        int cropIndex = cropData.FindIndex(x => x.landPlotId == landId);
+
+        string seedToGrow = cropData[cropIndex].seedToGrow;
+        cropData[cropIndex] = new CropSaveState(landId, seedToGrow, cropState, growth, plantHealth);
+    }
+
     //Cargamos la información de farmData a landData
     public void ImportLandData(List<LandSaveState> landDatasetToLoad)
     {
@@ -74,6 +106,26 @@ public class LandManager : MonoBehaviour
         {
             LandSaveState landDataToLoad = landDatasetToLoad[i];
             landPlots[i].LoadLandData(landDataToLoad.landStatus, landDataToLoad.lastWatered);
+        }
+
+        //Asignamos los valores de land data
+        landData = landDatasetToLoad;
+    }
+
+    //Cargamos la información de farmData hacia cropData
+    public void ImportCropData(List<CropSaveState> cropDatasetToLoad)
+    {
+        cropData = cropDatasetToLoad;
+
+        foreach (CropSaveState cropSave in cropDatasetToLoad)
+        {
+            //Accesamos a la tierra
+            Land landToPlant = landPlots[cropSave.landPlotId];
+            //Hacemos aparecer al cultivo
+            CropBehaviour cropToPlant = landToPlant.SpawnCrop();
+            //Lo cargamos en la data
+            SeedData seedToGrow = (SeedData) InventoryManager2.instance.itemIndex.GetItemFromString(cropSave.seedToGrow);
+            cropToPlant.LoadCrop(cropSave.landPlotId, seedToGrow, cropSave.cropState, cropSave.growth, cropSave.plantHealth);
         }
     }
 }

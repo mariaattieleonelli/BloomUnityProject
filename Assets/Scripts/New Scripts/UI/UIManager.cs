@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIManager : MonoBehaviour, ITimeTracker
@@ -61,6 +62,12 @@ public class UIManager : MonoBehaviour, ITimeTracker
         {
             TogglePausePanel();
         }
+    }
+
+    //Carga la pantalla de Main Menu
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(sceneName: "Main Menu");
     }
 
     //Itera sobre los slots de la UI y les asigna el índice adecuado a su referencia

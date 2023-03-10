@@ -27,6 +27,9 @@ public class InventoryManager2 : MonoBehaviour
         }
     }
 
+    //La lista completa de items
+    public ItemIndex itemIndex;
+
     //Movimiento de items del inventario al equipado
     public void InventoryToHand(int slotIndex, InventorySlot.InventoryType inventoryType)
     {

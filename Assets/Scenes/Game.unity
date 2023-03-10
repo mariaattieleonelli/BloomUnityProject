@@ -685,6 +685,7 @@ MonoBehaviour:
   - {fileID: 0}
   equipedItem: {fileID: 0}
   playersHand: {fileID: 1659416341}
+  itemIndex: {fileID: 11400000, guid: 8629e67db9a794b4eba3299a51a6ecaf, type: 2}
 --- !u!114 &117237153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2537,8 +2538,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.0027252461, y: -0.9706541, z: 0.24021254, w: 0.011012211}
-  m_LocalPosition: {x: 11.91, y: 4.38, z: 4.67}
+  m_LocalRotation: {x: 0.003947115, y: 0.9598325, z: -0.28022012, w: 0.013519974}
+  m_LocalPosition: {x: 11.080068, y: 8.683483, z: 12.6064625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4134,8 +4135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f6e627d0971414f8a4f73f8f47bf34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landData: []
-  landPlots: []
 --- !u!1 &608531003
 GameObject:
   m_ObjectHideFlags: 0
@@ -5087,8 +5086,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 2013524576}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:

@@ -140,18 +140,26 @@ public class Land : MonoBehaviour, ITimeTracker
         //No hay otra planta sembrada
         if(seedTool != null && landStatus != LandStatus.SOIL && cropPlanted == null)
         {
-            //Instanciamos el el objeto prefab crop
-            GameObject cropObject = Instantiate(cropPrefab, transform);
-            //Movemos el prefab a la posición que queremos
-            cropObject.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            SpawnCrop();
 
-            //Accedemos al comportamiento de la planta que vamos a crear
-            cropPlanted = cropObject.GetComponent<CropBehaviour>();
             //Plantamos la planta
-            cropPlanted.Plant(seedTool);
+            cropPlanted.Plant(id, seedTool);
             //Sonamos sonido de semilla
             AudioManager.instance.SeedSound();
         }
+    }
+
+    public CropBehaviour SpawnCrop()
+    {
+        //Instanciamos el el objeto prefab crop
+        GameObject cropObject = Instantiate(cropPrefab, transform);
+        //Movemos el prefab a la posición que queremos
+        cropObject.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
+        //Accedemos al comportamiento de la planta que vamos a crear
+        cropPlanted = cropObject.GetComponent<CropBehaviour>();
+
+        return cropPlanted;
     }
 
     //Cuando se hace hover sobre la tierra se muestra un efecto que indica interactibilidad

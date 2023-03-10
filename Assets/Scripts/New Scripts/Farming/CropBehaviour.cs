@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CropBehaviour : MonoBehaviour
 {
+    //Id de la tierra en donde se plantó la planta
+    int landId;
+
     //Trae la información de a qué planta crecerá lo que se plante
     SeedData seedToGrow;
 
@@ -23,8 +26,16 @@ public class CropBehaviour : MonoBehaviour
     public CropState cropState;
 
     //Inicializamos el game object de la planta cuando el jugador planta una semilla
-    public void Plant(SeedData seedToGrow)
+    public void Plant(int landId, SeedData seedToGrow)
     {
+        LoadCrop(landId, seedToGrow, CropState.SEED, 0, 0);
+        LandManager.instance.RegisterCrop(landId, seedToGrow, cropState, growth, plantHealth);
+    }
+
+    public void LoadCrop(int landPlotId, SeedData seedToGrow, CropBehaviour.CropState cropState, int growth, int plantHealth)
+    {
+        this.landId = landPlotId;
+
         //Guarda la información de las semillas
         this.seedToGrow = seedToGrow;
 
@@ -41,8 +52,12 @@ public class CropBehaviour : MonoBehaviour
         int hoursToGrow = Timestamp.DaysToHours(seedToGrow.daysToGrow);
         maxGrowth = Timestamp.HoursToMinutes(hoursToGrow);
 
-        //Ponemos el estado inicial como el de seed
-        SwitchState(CropState.SEED);
+        //Se establece el crecimiento y salud
+        this.growth = growth;
+        this.plantHealth = plantHealth;
+
+        //Ponemos el estado inicial del cultivo
+        SwitchState(cropState);
     }
 
     //Cuando se tenga el estado de watered, la planta debe crecer
@@ -54,7 +69,7 @@ public class CropBehaviour : MonoBehaviour
         //Cuando crece significa que la regamos, así que aumenta su salud
         if(plantHealth < plantMaxHealth)
         {
-            plantMaxHealth++;
+            plantHealth++;
         }
 
         //El retoño saldrá cuando se tenga la mitad del tiempo de crecimiento total de la planta
@@ -67,6 +82,9 @@ public class CropBehaviour : MonoBehaviour
         {
             SwitchState(CropState.HARVESTABLE);
         }
+
+        //Informamos los cambios en el crecimiento al land manager
+        LandManager.instance.OnCropStateChange(landId, cropState, growth, plantHealth);
     }
 
     //Cuando no se riega va perdiendo vida
@@ -78,6 +96,9 @@ public class CropBehaviour : MonoBehaviour
         {
             SwitchState(CropState.WILTED);
         }
+
+        //Actualizamos los cambios en la muerte al land manager
+        LandManager.instance.OnCropStateChange(landId, cropState, growth, plantHealth);
     }
 
     //Manejamos los cambios de estado de crecimiento
@@ -103,8 +124,7 @@ public class CropBehaviour : MonoBehaviour
                 harvestable.SetActive(true);
                 //Quitamos el padre de la planta que nació, es decir, el prefab de crop que maneja los estados
                 harvestable.transform.parent = null;
-                //Destruimos el padre para quedarnos solamente con la planta
-                Destroy(gameObject);
+                RemoveCrop();
                 break;
             case CropState.WILTED:
                 wiltedPlant.SetActive(true);
@@ -113,6 +133,15 @@ public class CropBehaviour : MonoBehaviour
 
         //Ponemos el estado de la planta como el estado al que estamos cambiando
         cropState = stateToSwitch;
+    }
+
+    //Destruye el cultivo y des registra de la lista de cultivos
+    public void RemoveCrop()
+    {
+        //Cuando se cultiva la planta, se elimina su información de la farm data
+        LandManager.instance.DeregisterCrop(landId);
+        //Destruimos el padre para quedarnos solamente con la planta
+        Destroy(gameObject);
     }
 
     public enum CropState
