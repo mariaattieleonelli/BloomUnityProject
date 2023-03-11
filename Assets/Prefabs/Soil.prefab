@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!4 &7440298289534938759
 Transform:
@@ -108,14 +108,14 @@ GameObject:
   - component: {fileID: 4240519285096196671}
   - component: {fileID: 970106014778336666}
   - component: {fileID: 3067643000244261200}
-  - component: {fileID: 3784127150357346530}
   - component: {fileID: 2516187015055946107}
+  - component: {fileID: -7024197868227281427}
   m_Layer: 0
   m_Name: Soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4240519285096196671
 Transform:
@@ -183,19 +183,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3784127150357346530
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3572068628883468421}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.392059, y: 2.2556, z: 1.34}
-  m_Center: {x: 0, y: 0.00000005960466, z: 0.54}
 --- !u!114 &2516187015055946107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +201,20 @@ MonoBehaviour:
   water: {fileID: 5466020161247794779, guid: ee7d39bed8779e44e8682ff66c6b9f93, type: 3}
   soilSelector: {fileID: 3505501244639284104}
   soilPatchRenderer: {fileID: 0}
+  id: 0
   landStatus: 0
   cropPrefab: {fileID: 4937059579975597407, guid: 9f04ac39e381ffb4ca1129d1e61a73e4,
     type: 3}
+--- !u!65 &-7024197868227281427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572068628883468421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.392059, y: 2.2556, z: 0.32662758}
+  m_Center: {x: 0, y: 0.00000011920928, z: 0.1633138}

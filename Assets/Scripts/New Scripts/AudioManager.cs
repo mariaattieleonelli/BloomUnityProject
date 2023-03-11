@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicAudioSource;
 
     public AudioClip[] sfxClips;
+    public AudioClip[] musicClips;
 
     private void Awake()
     {
@@ -20,6 +21,8 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
+
+        musicAudioSource.PlayOneShot(musicClips[0]);
     }
 
     public void HarvestSound()

@@ -95,8 +95,12 @@ public class LandManager : MonoBehaviour
         //Encuentra su indice en la lista
         int cropIndex = cropData.FindIndex(x => x.landPlotId == landId);
 
-        string seedToGrow = cropData[cropIndex].seedToGrow;
-        cropData[cropIndex] = new CropSaveState(landId, seedToGrow, cropState, growth, plantHealth);
+        //Esto lo metí en un if porque cuando ya nace la planta, el crop se destruye y se pierde el index
+        if(cropIndex >= 0)
+        {
+            string seedToGrow = cropData[cropIndex].seedToGrow;
+            cropData[cropIndex] = new CropSaveState(landId, seedToGrow, cropState, growth, plantHealth);
+        }
     }
 
     //Cargamos la información de farmData a landData

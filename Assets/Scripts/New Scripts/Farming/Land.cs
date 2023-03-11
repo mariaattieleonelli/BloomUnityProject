@@ -7,6 +7,8 @@ public class Land : MonoBehaviour, ITimeTracker
     public Material wateredSoilMat;
     public GameObject water;
 
+    private Animator playerAnimator;
+
     public GameObject soilSelector;
 
     public Renderer soilPatchRenderer;
@@ -23,6 +25,9 @@ public class Land : MonoBehaviour, ITimeTracker
 
     void Start()
     {
+        //Accedemos al animator del personaje
+        playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
+
         //Accesamos al componente renderer de los parches de tierra
         soilPatchRenderer = GetComponent<Renderer>();
 
@@ -99,6 +104,8 @@ public class Land : MonoBehaviour, ITimeTracker
     //Al seleccionar el parche de tierra con el mouse
     private void OnMouseDown()
     {
+        playerAnimator.SetTrigger("tool");
+
         //Checamos la herramienta que se tiene en la mano
         ItemData toolSlot = InventoryManager2.instance.equipedTool;
 

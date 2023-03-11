@@ -73,9 +73,11 @@ public class CharacterController : MonoBehaviour
         mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(mouseRay, out mouseHit, 150f))
         {
-
             if (mouseHit.transform.tag == "item" || mouseHit.transform.tag == "planta")
             {
+                //Animación de movimiento de mano
+                playerAnimator.SetTrigger("collectItem");
+
                 selectedInteractable = mouseHit.transform.GetComponent<InteractableObject>();
                 
                 selectedInteractable.PickupItem();
@@ -98,13 +100,4 @@ public class CharacterController : MonoBehaviour
             }
         }
     }
-
-
-    //Pertenece al primer intento
-    //public void IncreaseEnergy(int value)
-    //{
-    //    playerEnergy += value;
-    //    imgEnergy.fillAmount = playerEnergy / 100;
-    //}
-
 }
