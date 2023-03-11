@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
         }
 
+        //Reproduce la música de fondo del juego inicial
         musicAudioSource.PlayOneShot(musicClips[0]);
     }
 
@@ -43,5 +44,10 @@ public class AudioManager : MonoBehaviour
     public void ShovelSound()
     {
         sfxAudioSource.PlayOneShot(sfxClips[3]);
+    }
+
+    public void ButtonClick()
+    {
+        sfxAudioSource.PlayOneShot(sfxClips[4]);
     }
 }

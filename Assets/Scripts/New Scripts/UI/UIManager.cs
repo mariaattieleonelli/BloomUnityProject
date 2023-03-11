@@ -3,6 +3,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+//Link para objetos clickeados tras botones
+//https://
+//answers.unity.com/questions/1220418/object-behind-button-is-clicked-too.html*/
+
 public class UIManager : MonoBehaviour, ITimeTracker
 {
     public static UIManager instance { get; private set; }
@@ -27,6 +31,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     public GameObject inventorypanel;
     public GameObject pausePanel;
+    public GameObject optionsPanel;
 
     //Es el slot donde se equipa la herramienta en la UI del inventario
     public HandInventorySlot toolHandSlot;
@@ -128,6 +133,9 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     public void ToggleInventoryPanel()
     {
+        //Sonido de click
+        AudioManager.instance.ButtonClick();
+
         //Si está escondido se muestra, y viceversa
         inventorypanel.SetActive(!inventorypanel.activeSelf);
 
@@ -136,7 +144,28 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     public void TogglePausePanel()
     {
+        //Sonido de click
+        AudioManager.instance.ButtonClick();
+
         pausePanel.SetActive(!pausePanel.activeSelf);
+    }
+
+    public void OpenOptionsPanel()
+    {
+        //Sonido de click
+        AudioManager.instance.ButtonClick();
+
+        optionsPanel.SetActive(true);
+        pausePanel.SetActive(false);
+    }
+
+    public void CloseOptionsPanel()
+    {
+        //Sonido de click
+        AudioManager.instance.ButtonClick();
+
+        optionsPanel.SetActive(false);
+        pausePanel.SetActive(true);
     }
 
     //Nos traemos a esta función el timeStamp
