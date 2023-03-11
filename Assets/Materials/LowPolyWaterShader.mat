@@ -121,17 +121,17 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _Transparency: 0.6
-    - _WaveHeight: 1
+    - _WaveHeight: 1.4
     - _WaveSpeed: 0.1
-    - _WaveStrenght: 1
+    - _WaveStrenght: 2.5
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.47472408, g: 0.75491613, b: 0.7924528, a: 1}
     - _Color: {r: 0.47472405, g: 0.7549161, b: 0.7924528, a: 1}
-    - _Deep_Color: {r: 0.19347519, g: 0.103462085, b: 0.7075472, a: 0}
+    - _Deep_Color: {r: 0.0738252, g: 0.40400016, b: 0.745283, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Shallow_Color: {r: 0.36565503, g: 0.7040912, b: 0.9339623, a: 0}
+    - _Shallow_Color: {r: 0.41585082, g: 0.7316907, b: 0.8396226, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _WaveDirection: {r: 1, g: 1, b: 0, a: 0}
+    - _WaveDirection: {r: 1, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
