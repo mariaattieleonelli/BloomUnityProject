@@ -33,12 +33,15 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public GameObject pausePanel;
     public GameObject optionsPanel;
 
+    public TextMeshProUGUI moneyText;
+
     //Es el slot donde se equipa la herramienta en la UI del inventario
     public HandInventorySlot toolHandSlot;
 
     //Es el slot donde se equipa el item en la UI del inventario
     public HandInventorySlot itemHandSlot;
 
+    //Se establece la instancia
     private void Awake()
     {
         //si hay otra instancia, destruir la extra
@@ -54,8 +57,9 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     private void Start()
     {
-        RenderInventory();
-        AssignSlotIndexes();
+        RenderInventory(); //Actualiza inventario y muestra
+        AssignSlotIndexes(); //Asigna los index a la tierra
+        UIManager.instance.RenderPlayerStats(); //Actualiza en la UI los stats del jugador
 
         //Añadimos al UIManager a la lista de objetos a los que se le notifican cambios en el paso del tiempo
         TimeManager.instance.RegisterTracker(this);
@@ -131,6 +135,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
         }
     }
 
+    //Las siguientes 4 funciones abren los paneles correspondientes
     public void ToggleInventoryPanel()
     {
         //Sonido de click
@@ -207,5 +212,12 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
         //Mostramos la fecha en la UI
         dateText.text = dayOfTheWeek + " " + day;
+    }
+
+    //Muestra stats del jugador
+    public void RenderPlayerStats()
+    {
+        //Muestra el dinero del jugador
+        moneyText.text = "$" + PlayerStats.money;
     }
 }

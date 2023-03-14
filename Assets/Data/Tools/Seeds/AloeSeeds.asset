@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Semillas de aloe
   itemIcon: {fileID: 21300000, guid: 18740a97ea6a8ab4f85741988698d5d8, type: 3}
+  income: 0
+  cost: 5
   gameModel: {fileID: 0}
   daysToGrow: 1
   objectToGrow: {fileID: 11400000, guid: 8b318be574d80a94282db84bf2c806a7, type: 2}

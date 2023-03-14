@@ -41,6 +41,9 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     public virtual void OnPointerClick(PointerEventData eventData)
     {
+        //Dispara sonido de botón de UI
+        AudioManager.instance.ButtonClick();
+
         //Función que mueve del inventario a la mano
         InventoryManager2.instance.InventoryToHand(slotIndex, inventoryType);
     }
