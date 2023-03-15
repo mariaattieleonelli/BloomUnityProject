@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public GameObject inventorypanel;
     public GameObject pausePanel;
     public GameObject optionsPanel;
+    public YesNoPrompt yesNoPrompt;
 
     public TextMeshProUGUI moneyText;
 
@@ -135,6 +136,8 @@ public class UIManager : MonoBehaviour, ITimeTracker
         }
     }
 
+    #region Panel Activations
+
     //Las siguientes 4 funciones abren los paneles correspondientes
     public void ToggleInventoryPanel()
     {
@@ -172,6 +175,15 @@ public class UIManager : MonoBehaviour, ITimeTracker
         optionsPanel.SetActive(false);
         pausePanel.SetActive(true);
     }
+
+    public void TriggerYesNoPrompt(string message, System.Action onYes)
+    {
+        //Activa el panel
+        yesNoPrompt.gameObject.SetActive(true);
+
+        yesNoPrompt.CreatePrompt(message, onYes);
+    }
+    #endregion
 
     //Nos traemos a esta función el timeStamp
     public void ClockUpdate(Timestamp timeStamp)

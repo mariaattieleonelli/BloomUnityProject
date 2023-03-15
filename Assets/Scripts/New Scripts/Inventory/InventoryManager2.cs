@@ -118,4 +118,10 @@ public class InventoryManager2 : MonoBehaviour
         //Mostramos el inventario actualizado
         UIManager.instance.RenderInventory();
     }
+
+    ////Función que manda de la tienda al inventario del personaje el item
+    //public void ShopToInventory(ItemSlotData itemSlotToMove)
+    //{
+    //    ItemSlotData[] inventoryToAlter = IsTool(itemSlotToMove)?
+    //}
 }
