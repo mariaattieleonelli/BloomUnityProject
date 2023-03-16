@@ -38,6 +38,12 @@ public class TimeManager : MonoBehaviour
         StartCoroutine(TimeUpdate());
     }
 
+    //Carga la hora del save file
+    public void LoadTime(Timestamp timestamp)
+    {
+        this.timeStamp = new Timestamp(timestamp);
+    }
+
     IEnumerator TimeUpdate()
     {
         while (true)
