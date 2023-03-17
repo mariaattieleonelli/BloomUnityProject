@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+public class Shop : InteractableObject
 {
     public List<ItemData> shopItems;
 
@@ -14,10 +14,14 @@ public class Shop : MonoBehaviour
         if(PlayerStats.money > cost)
         {
             PlayerStats.SpendMoney(cost);
-            //Crea un ItemSlotData al item comprado
-            ItemSlotData purchasedItem = new ItemSlotData(item);
 
             //Mandamos el objeto comprado al inventario
+            InventoryManager2.instance.ShopToInventory(item);
         }
+    }
+
+    public override void PickupItem()
+    {
+        Purchase(item);
     }
 }

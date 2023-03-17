@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CropBehaviour : MonoBehaviour
@@ -122,6 +120,7 @@ public class CropBehaviour : MonoBehaviour
                 break;
             case CropState.HARVESTABLE:
                 harvestable.SetActive(true);
+                
                 //Quitamos el padre de la planta que nació, es decir, el prefab de crop que maneja los estados
                 harvestable.transform.parent = null;
                 RemoveCrop();

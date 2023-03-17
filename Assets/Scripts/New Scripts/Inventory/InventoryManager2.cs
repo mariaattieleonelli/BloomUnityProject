@@ -119,9 +119,23 @@ public class InventoryManager2 : MonoBehaviour
         UIManager.instance.RenderInventory();
     }
 
-    ////Función que manda de la tienda al inventario del personaje el item
-    //public void ShopToInventory(ItemSlotData itemSlotToMove)
-    //{
-    //    ItemSlotData[] inventoryToAlter = IsTool(itemSlotToMove)?
-    //}
+    //Función que manda de la tienda al inventario del personaje el item
+    public void ShopToInventory(ItemData itemSlotToMove)
+    {
+        //Iteramos sobre los slots y encontramos el primero que esté vacío
+        for (int i = 0; i < tools.Length; i++)
+        {
+            if (tools[i] == null)
+            {
+                //Mandamos el item en mano al inventario
+                tools[i] = itemSlotToMove;
+                break;
+            }
+        }
+        //Actualiza el item en mano
+        RenderHandItem();
+
+        //Mostramos el inventario actualizado
+        UIManager.instance.RenderInventory();
+    }
 }

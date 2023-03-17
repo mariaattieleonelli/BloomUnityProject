@@ -6,6 +6,7 @@ public class Land : MonoBehaviour, ITimeTracker
     public Material plantableSoilMat;
     public Material wateredSoilMat;
     public GameObject water;
+    public GameObject sparkles;
 
     private Animator playerAnimator;
 
@@ -216,5 +217,20 @@ public class Land : MonoBehaviour, ITimeTracker
                 cropPlanted.Wither();
             }
         }
+
+        //Si existe un cultivo
+        if(cropPlanted != null)
+        {
+            //Particulas que indican si ya está para cosecharse la planta
+            if (cropPlanted.cropState == CropBehaviour.CropState.HARVESTABLE)
+            {
+                sparkles.SetActive(true);
+            }
+            else
+            {
+                sparkles.SetActive(false);
+            }
+        }
+
     }
 }
