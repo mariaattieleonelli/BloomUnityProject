@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 226825fa3ea6754409458ffdb79a83ff
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Meloso
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 81f377d2f0523544cb190ac92e70432d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

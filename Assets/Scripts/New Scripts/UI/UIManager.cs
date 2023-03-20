@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -41,6 +42,8 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     //Es el slot donde se equipa el item en la UI del inventario
     public HandInventorySlot itemHandSlot;
+
+    public ShopListingManager shopListingManager;
 
     //Se establece la instancia
     private void Awake()
@@ -182,6 +185,13 @@ public class UIManager : MonoBehaviour, ITimeTracker
         yesNoPrompt.gameObject.SetActive(true);
 
         yesNoPrompt.CreatePrompt(message, onYes);
+    }
+
+    public void OpenShop(List<ItemData> shopItems)
+    {
+        //Muestra la ventana de la tienda
+        shopListingManager.gameObject.SetActive(true);
+        shopListingManager.RenderShop(shopItems);
     }
     #endregion
 

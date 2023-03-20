@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 7f6c7f94663acd446a1096b09690ea5c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Meloso
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 22ee0775cf1d835488626043c0f9043c, type: 3}
+  - {fileID: 12800000, guid: b85164ed6a5cf4f41a880c48108a7a62, type: 3}
+  - {fileID: 12800000, guid: 226825fa3ea6754409458ffdb79a83ff, type: 3}
+  - {fileID: 12800000, guid: feacfdd5cdde31a4a88e610aa573af47, type: 3}
+  - {fileID: 12800000, guid: 6e37b43981822f0478850d17a4afed2f, type: 3}
+  - {fileID: 12800000, guid: 2466762478dd4c74b9bed35689e9e136, type: 3}
+  - {fileID: 12800000, guid: b7606c60fc168f4499e1b3850efa5453, type: 3}
+  - {fileID: 12800000, guid: 1974f4aefe184bb4fa27c8796138669b, type: 3}
+  - {fileID: 12800000, guid: 81f377d2f0523544cb190ac92e70432d, type: 3}
+  - {fileID: 12800000, guid: 89d9fc0e3b42bdf4aa2bd03f64b0b226, type: 3}
+  - {fileID: 12800000, guid: 03603c6685e602648bc0aed727682a90, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
