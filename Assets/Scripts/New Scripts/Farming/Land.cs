@@ -129,14 +129,19 @@ public class Land : MonoBehaviour, ITimeTracker
                     SwitchLandStatus(LandStatus.PLANTABLE);
                     //Suena audio de pala
                     AudioManager.instance.ShovelSound();
+                    //Gasta energía
+                    PlayerStats.ConsumeEnergy();
                     break;
                 case ToolsData.ToolType.waterCan:
                     //Suena audio de agua
                     AudioManager.instance.WaterSound();
                     SwitchLandStatus(LandStatus.WATERED);
+                    //Gasta energía
+                    PlayerStats.ConsumeEnergy();
                     break;
             }
             return;
+
         }
 
         //Intentamos castear la info de la semilla equipada en el slot de equipado
@@ -155,6 +160,9 @@ public class Land : MonoBehaviour, ITimeTracker
             //Sonamos sonido de semilla
             AudioManager.instance.SeedSound();
         }
+
+        //Gasta energía
+        PlayerStats.ConsumeEnergy();
     }
 
     public CropBehaviour SpawnCrop()

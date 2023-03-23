@@ -37,6 +37,9 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     public TextMeshProUGUI moneyText;
 
+    public Image energyBar;
+    public TextMeshProUGUI energyPercentage;
+
     //Es el slot donde se equipa la herramienta en la UI del inventario
     public HandInventorySlot toolHandSlot;
 
@@ -241,5 +244,9 @@ public class UIManager : MonoBehaviour, ITimeTracker
     {
         //Muestra el dinero del jugador
         moneyText.text = "$" + PlayerStats.money;
+
+        energyPercentage.text = PlayerStats.playerEnergy.ToString();
+
+        energyBar.fillAmount = PlayerStats.playerEnergy / 100;
     }
 }

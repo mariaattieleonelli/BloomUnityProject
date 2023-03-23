@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
         musicAudioSource.PlayOneShot(musicClips[0]);
     }
 
+
     public void HarvestSound()
     {
         sfxAudioSource.PlayOneShot(sfxClips[0]);
@@ -49,5 +50,9 @@ public class AudioManager : MonoBehaviour
     public void ButtonClick()
     {
         sfxAudioSource.PlayOneShot(sfxClips[4]);
+    }
+    public void EatingSound()
+    {
+        sfxAudioSource.PlayOneShot(sfxClips[6]);
     }
 }

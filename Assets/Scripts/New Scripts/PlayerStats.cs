@@ -5,6 +5,25 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static int money { get; private set;}
+    public static float playerEnergy { get; private set; } = 100;
+
+    public static void ConsumeEnergy()
+    {
+        playerEnergy -= 10;
+
+        //Actualiza en la UI los stats del jugador
+        UIManager.instance.RenderPlayerStats();
+    }
+
+    public static void GainEnergy(int energyGain)
+    {
+        playerEnergy += energyGain;
+
+        AudioManager.instance.EatingSound();
+
+        //Actualiza en la UI los stats del jugador
+        UIManager.instance.RenderPlayerStats();
+    }
 
     public static void SpendMoney(int price)
     {
@@ -33,6 +52,7 @@ public class PlayerStats : MonoBehaviour
     public static void LoadStats()
     {
         money = money;
+        playerEnergy = playerEnergy;
         UIManager.instance.RenderPlayerStats();
     }
 }

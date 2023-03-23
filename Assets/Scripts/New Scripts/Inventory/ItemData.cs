@@ -5,6 +5,7 @@ public class ItemData : ScriptableObject
 {
     public string itemName;
     public Sprite itemIcon;
+    public int energyAmount;
     public int income;
     public int cost;
     public GameObject gameModel;

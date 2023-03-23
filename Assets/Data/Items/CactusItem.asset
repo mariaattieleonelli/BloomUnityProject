@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cactus
   itemIcon: {fileID: 21300000, guid: 9edda5d4fb382f9469eadabe8b1dd11c, type: 3}
+  energyAmount: 10
   income: 15
   cost: 0
   gameModel: {fileID: 5248801034035115915, guid: 5949dcf2b50c7534c9d816c33e27f3e7,

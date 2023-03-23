@@ -55,9 +55,33 @@ public class CharacterController : MonoBehaviour
             TimeManager.instance.Tick();
         }
 
+        //Para consumir alimentos
+        if (Input.GetKey(KeyCode.C))
+        {
+            ItemConsume();
+        }
+
         if(Input.GetButtonDown("Fire2"))
         { 
             ItemInteract();
+        }
+    }
+
+    private void ItemConsume()
+    {
+        //Si se tiene algo en la mano,  y se da click en c, se consume
+        if (InventoryManager2.instance.equipedItem != null)
+        {
+            //Se guarda el valor de energía que otorga
+            int energyGain = InventoryManager2.instance.equipedItem.energyAmount;
+
+            //Se elimina el item de la mano
+            InventoryManager2.instance.equipedItem = null;
+
+            //Actualiza el item en mano
+            InventoryManager2.instance.RenderHandItem();
+
+            PlayerStats.GainEnergy(energyGain);
         }
     }
 
@@ -81,6 +105,8 @@ public class CharacterController : MonoBehaviour
                 selectedInteractable = mouseHit.transform.GetComponent<InteractableObject>();
                 
                 selectedInteractable.PickupItem();
+                //Gasta energía
+                PlayerStats.ConsumeEnergy();
                 //Si es planta, suena el efecto de cosechar
                 if(mouseHit.transform.tag == "planta")
                 {
@@ -96,6 +122,9 @@ public class CharacterController : MonoBehaviour
             if(mouseHit.transform.tag == "plantaMuerta")
             {
                 Destroy(mouseHit.transform.gameObject);
+                //Gasta energía
+                PlayerStats.ConsumeEnergy();
+
                 AudioManager.instance.ShovelSound();
             }
         }
