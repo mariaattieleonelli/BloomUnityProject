@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AloeItem
   m_EditorClassIdentifier: 
   itemName: Aloe
-  itemIcon: {fileID: 21300000, guid: 40eeca2e5e667094e89c390316661eb4, type: 3}
+  itemIcon: {fileID: 21300000, guid: 87ac3f179a97922478683423ac6cd4d3, type: 3}
   energyAmount: 5
   income: 10
   cost: 0

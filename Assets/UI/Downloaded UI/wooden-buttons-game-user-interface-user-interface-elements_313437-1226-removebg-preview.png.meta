@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 126fe9bee37fb484bb2fbbe1c873e5b9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 193
+        width: 143
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8cd99f6dd03e544c937922e60b2ee7f
+      internalID: 342298680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 256
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5888fbda5e243ac419ee372c58396fec
+      internalID: -1538531836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 254
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f40c20059b21e943bd13abc854ce707
+      internalID: 1859485934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 259
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43861be1b9c181b49a472d731caffb39
+      internalID: -856395885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 277
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11409199682d5624eb5a2182dd83f0ea
+      internalID: 1300315632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 277
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e4ef7ba87b8704eaf1be279d95036d
+      internalID: -1626029344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 277
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35f18b9eee514244ab173b738fab3d3
+      internalID: -2113984827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 277
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d71c2f5b3590b84d98fb7a9f3385d7c
+      internalID: -1609295307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 277
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af894e912ad76ba4c9496ab48e107fe9
+      internalID: 895352372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 193
+        width: 155
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f957e4caeee8b2d4ea905ad1a8c62457
+      internalID: -716003583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 192
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbd8f274e6be274aba07885b082bd79
+      internalID: -1208337502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 226
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf69876a90722ea42bb809e11d7d6765
+      internalID: 535198029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 226
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1b4c283ef3b42479f4ef112fe315a9
+      internalID: 1376361874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 226
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3303bb85a8038468d68ed9fe0d270d
+      internalID: 1446847156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 226
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10a430166931284984f727dab6a162e
+      internalID: -1485834769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 226
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57e922191e7e274885c85434f3c90ef
+      internalID: -1087489813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 129
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e370e4e48234464fa165dc4ad83d94b
+      internalID: -1789795534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 131
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8089b52207fbaae4abfc51079e2e1fe1
+      internalID: -404514189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 175
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8481359e71de4841868d5fe9b4dc452
+      internalID: -869456383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 175
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02268182ae7da246ab960ef07ce7b28
+      internalID: 1760495589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 175
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1410663a969902442978691e8c152f39
+      internalID: 124899782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 175
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2295bc671bc6c1746a19d1ee47a3a781
+      internalID: -1199413407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 175
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95704ec6abcdde4fbdb8bd227345549
+      internalID: 1876357291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 139
+        width: 235
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c989b60a0d3ed184bb8b0d920b2374c3
+      internalID: -2098846597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 124
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98329becb473434b97f85ac308df126
+      internalID: -1494353125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 124
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ccb0d8a46fe7348a3505d27cdd83fc
+      internalID: 128750973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 124
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d641250c4d5194f930ddfc0c4b9a31
+      internalID: 867114074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 124
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3d16aab3aed1e4bada628989a50179
+      internalID: -23685480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 124
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de0507301eafdd4095fc76850f7a9fb
+      internalID: -1932807103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 99
+        width: 235
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2575b4e2897174fb40a41eaeb298ad
+      internalID: 2040199278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 72
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772521f6c54e7844c93d6bdc19e47712
+      internalID: 1668835738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 72
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35abffa227a5ccb49803f179c326b259
+      internalID: -1111170220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 72
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0b251a115bace43987ca9cedad95cd
+      internalID: 910305793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 71
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dd6a3e5fea497a40962ef6713b411e3
+      internalID: -1864031111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 72
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b402c7d06c1db2b4b88fd7fb7cf46063
+      internalID: -227173087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 72
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7145824377b1fa4db7df7e51ebb20ba
+      internalID: -2069654286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 72
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e473ed057a44fe844aec8081d79731d0
+      internalID: 203951896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 60
+        width: 235
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab495ad0357985c41a568787e7f793dc
+      internalID: 1596113762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 20
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c9a5128f7f6544fb76e67dd2fee8e5
+      internalID: 388526174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 20
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0b35d77b019024898be1c5535240f9
+      internalID: -758931439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 21
+        width: 60
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f534d281a785514faddc67b111c786f
+      internalID: -34469157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 21
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 815c0a7b237134b42a8321c7ee870a6e
+      internalID: -544395954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 21
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81e7dc1a2660e44eb7087ac38042ab6
+      internalID: 190161094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 21
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22d225773624d14ba935a3910a58316
+      internalID: -1614578826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_44
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 21
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e839944675a9204fb846a3c11769e99
+      internalID: 1825754763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_45
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 21
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa25692a446113448b53c2a94c92c97
+      internalID: -1131338076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_46
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 20
+        width: 235
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa0d61103d9ea4478fcac24c4384d6c
+      internalID: 13954004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c4bab313fffb1f343b4c8ebd55f439f2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_0: 342298680
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_27: -23685480
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_5: -1626029344
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_42: 190161094
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_3: -856395885
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_35: -2069654286
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_1: -1538531836
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_41: -544395954
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_43: -1614578826
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_7: -1609295307
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_29: 2040199278
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_14: -1485834769
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_16: -1789795534
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_13: 1446847156
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_20: 124899782
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_24: -1494353125
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_38: 388526174
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_32: 910305793
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_18: -869456383
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_6: -2113984827
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_44: 1825754763
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_33: -1864031111
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_22: 1876357291
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_4: 1300315632
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_11: 535198029
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_40: -34469157
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_34: -227173087
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_45: -1131338076
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_8: 895352372
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_9: -716003583
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_10: -1208337502
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_2: 1859485934
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_39: -758931439
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_31: -1111170220
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_37: 1596113762
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_23: -2098846597
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_28: -1932807103
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_25: 128750973
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_15: -1087489813
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_17: -404514189
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_19: 1760495589
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_36: 203951896
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_21: -1199413407
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_12: 1376361874
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_46: 13954004
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_30: 1668835738
+      wooden-buttons-game-user-interface-user-interface-elements_313437-1226-removebg-preview_26: 867114074
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

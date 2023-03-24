@@ -7,6 +7,8 @@ public class PlayerStats : MonoBehaviour
     public static int money { get; private set;}
     public static float playerEnergy { get; private set; } = 100;
 
+    public static float water { get; private set; } = 100;
+
     public static void ConsumeEnergy()
     {
         playerEnergy -= 10;
@@ -23,6 +25,11 @@ public class PlayerStats : MonoBehaviour
 
         //Actualiza en la UI los stats del jugador
         UIManager.instance.RenderPlayerStats();
+    }
+
+    public static void UseWater()
+    {
+        water -= 10;
     }
 
     public static void SpendMoney(int price)
@@ -49,10 +56,12 @@ public class PlayerStats : MonoBehaviour
         UIManager.instance.RenderPlayerStats();
     }
 
-    public static void LoadStats()
+    public static void LoadStats(int savedMoney, float savedEnergy, float savedWater)
     {
-        money = money;
-        playerEnergy = playerEnergy;
+        money = savedMoney;
+        playerEnergy = savedEnergy;
+        water = savedWater;
+
         UIManager.instance.RenderPlayerStats();
     }
 }

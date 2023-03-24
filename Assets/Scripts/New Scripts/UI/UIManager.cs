@@ -40,6 +40,8 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public Image energyBar;
     public TextMeshProUGUI energyPercentage;
 
+    public Image waterLeft;
+
     //Es el slot donde se equipa la herramienta en la UI del inventario
     public HandInventorySlot toolHandSlot;
 
@@ -248,5 +250,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
         energyPercentage.text = PlayerStats.playerEnergy.ToString();
 
         energyBar.fillAmount = PlayerStats.playerEnergy / 100;
+
+        waterLeft.fillAmount = PlayerStats.water / 100;
     }
 }

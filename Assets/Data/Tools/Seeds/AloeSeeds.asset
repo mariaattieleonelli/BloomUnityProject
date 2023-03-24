@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a0d0859c137f141bf753e0c89cbb5b, type: 3}
   m_Name: AloeSeeds
   m_EditorClassIdentifier: 
-  itemName: Semillas de aloe
-  itemIcon: {fileID: 21300000, guid: 18740a97ea6a8ab4f85741988698d5d8, type: 3}
+  itemName: Aloe
+  itemIcon: {fileID: 21300000, guid: dfd728652bbccd74d8a7ce4fb5734c3b, type: 3}
+  energyAmount: 0
   income: 0
   cost: 5
   gameModel: {fileID: 0}

@@ -138,6 +138,8 @@ public class Land : MonoBehaviour, ITimeTracker
                     SwitchLandStatus(LandStatus.WATERED);
                     //Gasta energía
                     PlayerStats.ConsumeEnergy();
+                    //Gasta agua
+                    PlayerStats.UseWater();
                     break;
             }
             return;

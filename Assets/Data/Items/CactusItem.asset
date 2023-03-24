@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CactusItem
   m_EditorClassIdentifier: 
   itemName: Cactus
-  itemIcon: {fileID: 21300000, guid: 9edda5d4fb382f9469eadabe8b1dd11c, type: 3}
+  itemIcon: {fileID: 21300000, guid: a59783bcc0b81234aa9ca4451559da26, type: 3}
   energyAmount: 10
   income: 15
   cost: 0

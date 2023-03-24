@@ -38,7 +38,7 @@ public class GameStateManager : MonoBehaviour
         //Recupera estado del time stamp
         Timestamp timestamp = TimeManager.instance.GetTimeStamp();
 
-        return new GameSaveState(landData, cropData, timestamp);
+        return new GameSaveState(landData, cropData, timestamp, PlayerStats.money, PlayerStats.playerEnergy, PlayerStats.water);
 
     }
 
@@ -65,5 +65,8 @@ public class GameStateManager : MonoBehaviour
             LandManager.instance.ImportLandData(LandManager.farmData.Item1); //El item 1 de la tupla, que trae la información de la tierra
             LandManager.instance.ImportCropData(LandManager.farmData.Item2); //El item 2 de la tupla, que trae la información de los cultivos
         }
+
+        //Player stats
+        PlayerStats.LoadStats(save.money, save.playerEnergy, save.water);
     }
 }

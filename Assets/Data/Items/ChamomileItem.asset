@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76551796a94d8346a1bf71589e5bafa, type: 3}
   m_Name: ChamomileItem
   m_EditorClassIdentifier: 
-  itemName: Flor de manzanilla
-  itemIcon: {fileID: 21300000, guid: b9e48f7148a32944281cb013f98acf0c, type: 3}
+  itemName: Manzanilla
+  itemIcon: {fileID: 21300000, guid: 150f7f1b84e360e4cb745f27d17f9738, type: 3}
   energyAmount: 15
   income: 20
   cost: 0

@@ -20,10 +20,18 @@ public class GameSaveState
     //Tiempo
     public Timestamp timeStamp;
 
-    public GameSaveState(List<LandSaveState> landData, List<CropSaveState> cropData, /*ItemSlotData[] toolSlots, ItemSlotData[] itemSlots, ItemSlotData equippedToolSlot, ItemSlotData equippedItemSlot,*/ Timestamp timeStamp)
+    //Player stats
+    public int money;
+    public float playerEnergy;
+    public float water;
+
+    public GameSaveState(List<LandSaveState> landData, List<CropSaveState> cropData, /*ItemSlotData[] toolSlots, ItemSlotData[] itemSlots, ItemSlotData equippedToolSlot, ItemSlotData equippedItemSlot,*/ Timestamp timeStamp, int money, float playerEnergy, float water)
     {
         this.landData = landData;
         this.cropData = cropData;
+        this.money = money;
+        this.playerEnergy = playerEnergy;
+        this.water = water;
         //this.toolSlots = toolSlots;
         //this.itemSlots = itemSlots;
         //this.equippedToolSlot = equippedToolSlot;
