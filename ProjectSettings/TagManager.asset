@@ -7,6 +7,9 @@ TagManager:
   - planta
   - item
   - plantaMuerta
+  - soil
+  - waterSource
+  - Bed
   layers:
   - Default
   - TransparentFX

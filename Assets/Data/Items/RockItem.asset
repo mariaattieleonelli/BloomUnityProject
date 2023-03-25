@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Piedra
   itemIcon: {fileID: 21300000, guid: ba33fac21a0f2ca429b47fbcbeb14192, type: 3}
-  income: 3
+  energyAmount: 0
+  income: 2
   cost: 0
   gameModel: {fileID: 8679644116000461737, guid: db7c32c4444a2284f97f324940465159,
     type: 3}
