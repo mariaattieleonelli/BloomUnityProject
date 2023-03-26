@@ -123,35 +123,43 @@ public class CharacterController : MonoBehaviour
         mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(mouseRay, out mouseHit, 150f))
         {
-            if (mouseHit.transform.tag == "item" || mouseHit.transform.tag == "planta")
+            //Si el jugador tiene energía
+            if(PlayerStats.playerEnergy > 0)
             {
-                //Animación de movimiento de mano
-                playerAnimator.SetTrigger("collectItem");
-
-                selectedInteractable = mouseHit.transform.GetComponent<InteractableObject>();
-                
-                selectedInteractable.PickupItem();
-                //Gasta energía
-                PlayerStats.ConsumeEnergy();
-                //Si es planta, suena el efecto de cosechar
-                if(mouseHit.transform.tag == "planta")
+                if (mouseHit.transform.tag == "item" || mouseHit.transform.tag == "planta")
                 {
-                    AudioManager.instance.HarvestSound();
+                    //Animación de movimiento de mano
+                    playerAnimator.SetTrigger("collectItem");
+
+                    selectedInteractable = mouseHit.transform.GetComponent<InteractableObject>();
+
+                    selectedInteractable.PickupItem();
+                    //Gasta energía
+                    PlayerStats.ConsumeEnergy();
+                    //Si es planta, suena el efecto de cosechar
+                    if (mouseHit.transform.tag == "planta")
+                    {
+                        AudioManager.instance.HarvestSound();
+                    }
+                }
+
+                if (selectedInteractable != null)
+                {
+                    selectedInteractable = null;
+                }
+
+                if (mouseHit.transform.tag == "plantaMuerta")
+                {
+                    Destroy(mouseHit.transform.gameObject);
+                    //Gasta energía
+                    PlayerStats.ConsumeEnergy();
+
+                    AudioManager.instance.ShovelSound();
                 }
             }
-
-            if (selectedInteractable != null)
+            else if(PlayerStats.playerEnergy <= 0)
             {
-                selectedInteractable = null;
-            }
-
-            if(mouseHit.transform.tag == "plantaMuerta")
-            {
-                Destroy(mouseHit.transform.gameObject);
-                //Gasta energía
-                PlayerStats.ConsumeEnergy();
-
-                AudioManager.instance.ShovelSound();
+                UIManager.instance.NoEnergyWarning();
             }
 
             //Si seleccionamos el lago

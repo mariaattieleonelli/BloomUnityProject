@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -34,6 +35,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public GameObject pausePanel;
     public GameObject optionsPanel;
     public GameObject sleepingPanel;
+    public GameObject noEnergyWarning;
 
     public TextMeshProUGUI moneyText;
 
@@ -41,6 +43,9 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public TextMeshProUGUI energyPercentage;
 
     public Image waterLeft;
+
+    //Indica si acabó la corrutina
+    private bool waitSecondsEnded = false;
 
     //Es el slot donde se equipa la herramienta en la UI del inventario
     public HandInventorySlot toolHandSlot;
@@ -79,6 +84,13 @@ public class UIManager : MonoBehaviour, ITimeTracker
         if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePausePanel();
+        }
+
+        //Revisa si el valor de wait seconds es verdadero (ya terminó) y desactiva el panel de warning
+        if (waitSecondsEnded)
+        {
+            //Si ya pasaron los 3 segundos, desactivamos el warning
+            noEnergyWarning.SetActive(false);
         }
     }
 
@@ -195,7 +207,22 @@ public class UIManager : MonoBehaviour, ITimeTracker
         shopListingManager.gameObject.SetActive(true);
         shopListingManager.RenderShop(shopItems);
     }
+
+    //Muestra mensaje de que no tienes energía, se quita tres segundos después
+    public void NoEnergyWarning()
+    {
+        noEnergyWarning.SetActive(true);
+        StartCoroutine(WaitSeconds(3));
+    }
     #endregion
+
+    //Espera segundos
+    IEnumerator WaitSeconds(int seconds)
+    {
+        waitSecondsEnded = false;
+        yield return new WaitForSeconds(seconds);
+        waitSecondsEnded = true;
+    }
 
     //Nos traemos a esta función el timeStamp
     public void ClockUpdate(Timestamp timeStamp)

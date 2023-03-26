@@ -20,7 +20,7 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    //Función para irte a dormir
+    //Función para irte a dormir (no se implementó aún)
     public void Sleep()
     {
         Debug.Log("Duermo");

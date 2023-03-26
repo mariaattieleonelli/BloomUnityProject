@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static int money { get; private set;}
+    public static int money { get; private set; } = 70;
     public static float playerEnergy { get; private set; } = 100;
 
     public static float water { get; private set; } = 100;
