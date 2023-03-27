@@ -9,9 +9,13 @@ public class PlayerStats : MonoBehaviour
 
     public static float water { get; private set; } = 100;
 
+    public static float sfxVolume { get; private set; }
+    public static float musicVolume { get; private set; }
+
+    #region Player Actions
     public static void ConsumeEnergy()
     {
-        playerEnergy -= 10;
+        playerEnergy -= 5;
 
         //Actualiza en la UI los stats del jugador
         UIManager.instance.RenderPlayerStats();
@@ -38,7 +42,9 @@ public class PlayerStats : MonoBehaviour
         //Actualiza en la UI los stats del jugador
         UIManager.instance.RenderPlayerStats();
     }
+    #endregion
 
+    #region Money Actions
     public static void SpendMoney(int price)
     {
         //Si el precio del objeto es mayor que su dinero
@@ -62,6 +68,8 @@ public class PlayerStats : MonoBehaviour
         //Actualiza en la UI los stats del jugador
         UIManager.instance.RenderPlayerStats();
     }
+
+    #endregion
 
     public static void LoadStats(int savedMoney, float savedEnergy, float savedWater)
     {

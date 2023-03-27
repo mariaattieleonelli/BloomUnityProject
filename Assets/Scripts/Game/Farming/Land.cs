@@ -105,8 +105,11 @@ public class Land : MonoBehaviour, ITimeTracker
     //Al seleccionar el parche de tierra con el mouse
     private void OnMouseDown()
     {
+        //Energía que le quedaría al jugador tras hacer la acción
+        float playerEnergyAfterActing = PlayerStats.playerEnergy - 5;
+
         //Si el jugador tiene energía, se continua
-        if(PlayerStats.playerEnergy > 0)
+        if(playerEnergyAfterActing >= 0)
         {
             playerAnimator.SetTrigger("tool");
 
@@ -135,14 +138,27 @@ public class Land : MonoBehaviour, ITimeTracker
                         //Gasta energía
                         PlayerStats.ConsumeEnergy();
                         break;
+
                     case ToolsData.ToolType.waterCan:
-                        //Suena audio de agua
-                        AudioManager.instance.WaterSound();
-                        SwitchLandStatus(LandStatus.WATERED);
-                        //Gasta energía
-                        PlayerStats.ConsumeEnergy();
-                        //Gasta agua
-                        PlayerStats.UseWater();
+                        //Agua que le quedaría al jugador tras regar
+                        float playerWaterAfterActing = PlayerStats.water - 10;
+
+                        //Condición de regar
+                        if (playerWaterAfterActing >= 0)
+                        {
+                            //Suena audio de agua
+                            AudioManager.instance.WaterSound();
+                            SwitchLandStatus(LandStatus.WATERED);
+                            //Gasta energía
+                            PlayerStats.ConsumeEnergy();
+                            //Gasta agua
+                            PlayerStats.UseWater();
+                        }
+                        else if(playerWaterAfterActing < 0)
+                        {
+                            UIManager.instance.PopUpWarning("¡Necesitas rellenar tu regadera de agua!");
+                        }
+                        
                         break;
                 }
                 return;
@@ -170,10 +186,9 @@ public class Land : MonoBehaviour, ITimeTracker
             PlayerStats.ConsumeEnergy();
         }
         //Sino, se da aviso de que no se tiene energía
-        else if (PlayerStats.playerEnergy <= 0)
+        else if (playerEnergyAfterActing < 0)
         {
-            Debug.Log("No tengo energía");
-            UIManager.instance.NoEnergyWarning();
+            UIManager.instance.PopUpWarning("¡No tienes más energía! Será mejor que comas algo...");
         }
     }
 
@@ -246,7 +261,7 @@ public class Land : MonoBehaviour, ITimeTracker
             {
                 sparkles.SetActive(true);
             }
-            else
+            else if(cropPlanted.cropState != CropBehaviour.CropState.HARVESTABLE && landStatus == LandStatus.SOIL)
             {
                 sparkles.SetActive(false);
             }

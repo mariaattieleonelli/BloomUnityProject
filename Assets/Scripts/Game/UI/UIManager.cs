@@ -35,7 +35,10 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public GameObject pausePanel;
     public GameObject optionsPanel;
     public GameObject sleepingPanel;
-    public GameObject noEnergyWarning;
+
+    //Warning pop up
+    public GameObject warningPanel;
+    public TextMeshProUGUI warningPanelText; //Muestra la leyenda que deseemos
 
     public TextMeshProUGUI moneyText;
 
@@ -90,7 +93,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
         if (waitSecondsEnded)
         {
             //Si ya pasaron los 3 segundos, desactivamos el warning
-            noEnergyWarning.SetActive(false);
+            warningPanel.SetActive(false);
         }
     }
 
@@ -209,11 +212,13 @@ public class UIManager : MonoBehaviour, ITimeTracker
     }
 
     //Muestra mensaje de que no tienes energía, se quita tres segundos después
-    public void NoEnergyWarning()
+    public void PopUpWarning(string message)
     {
-        noEnergyWarning.SetActive(true);
+        warningPanel.SetActive(true);
+        warningPanelText.text = message;
         StartCoroutine(WaitSeconds(3));
     }
+
     #endregion
 
     //Espera segundos

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +11,15 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip[] sfxClips;
     public AudioClip[] musicClips;
+
+    [SerializeField] public Slider sfxSlider;
+    [SerializeField] public Slider musicSlider;
+
+    public AudioMixer audioMixer;
+
+    //Parámetros expuestos del audio mixer
+    const string mixerMusic = "musicVolume";
+    const string mixerSfx = "sfxVolume";
 
     private void Awake()
     {
@@ -24,9 +35,23 @@ public class AudioManager : MonoBehaviour
 
         //Reproduce la música de fondo del juego inicial
         musicAudioSource.PlayOneShot(musicClips[0]);
+
+        //Cuando cambia el valor de los sliders de sonido
+        musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        sfxSlider.onValueChanged.AddListener(SetSfxVolume);
     }
 
+    private void SetMusicVolume(float value)
+    {
+        audioMixer.SetFloat(mixerMusic, Mathf.Log10(value) * 20); //Se hace la multiplicación para llegar a menos 80 decibeles
+    }
 
+    private void SetSfxVolume(float value)
+    {
+        audioMixer.SetFloat(mixerSfx, Mathf.Log10(value) * 20); //Se hace la multiplicación para llegar a menos 80 decibeles
+    }
+
+    #region Sound Effects
     public void HarvestSound()
     {
         sfxAudioSource.PlayOneShot(sfxClips[0]);
@@ -55,4 +80,7 @@ public class AudioManager : MonoBehaviour
     {
         sfxAudioSource.PlayOneShot(sfxClips[6]);
     }
+    #endregion
+
+
 }

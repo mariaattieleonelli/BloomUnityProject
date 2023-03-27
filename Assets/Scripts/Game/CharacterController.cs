@@ -113,6 +113,9 @@ public class CharacterController : MonoBehaviour
 
     private void ItemInteract()
     {
+        //Energía que le quedaría al jugador tras hacer la acción
+        float playerEnergyAfterActing = PlayerStats.playerEnergy - 5;
+
         //Si se tiene algo en la mano, se deja en el inventario
         if (InventoryManager2.instance.equipedItem != null)
         {
@@ -124,7 +127,7 @@ public class CharacterController : MonoBehaviour
         if (Physics.Raycast(mouseRay, out mouseHit, 150f))
         {
             //Si el jugador tiene energía
-            if(PlayerStats.playerEnergy > 0)
+            if(playerEnergyAfterActing >= 0)
             {
                 if (mouseHit.transform.tag == "item" || mouseHit.transform.tag == "planta")
                 {
@@ -157,9 +160,9 @@ public class CharacterController : MonoBehaviour
                     AudioManager.instance.ShovelSound();
                 }
             }
-            else if(PlayerStats.playerEnergy <= 0)
+            else if(playerEnergyAfterActing < 0)
             {
-                UIManager.instance.NoEnergyWarning();
+                UIManager.instance.PopUpWarning("¡No tienes más energía! Será mejor que comas algo...");
             }
 
             //Si seleccionamos el lago
