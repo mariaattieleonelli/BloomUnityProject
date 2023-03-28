@@ -29,5 +29,9 @@ public class LoadingScreen : MonoBehaviour
         }
     }
 
-
+    public void IsNewSaveFile(bool var)
+    {
+        //Si se inicia una nueva partida
+        PlayerStats.isNewGame = var;
+    }
 }

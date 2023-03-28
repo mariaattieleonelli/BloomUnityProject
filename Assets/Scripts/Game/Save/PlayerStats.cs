@@ -12,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     public static float sfxVolume { get; private set; }
     public static float musicVolume { get; private set; }
 
+    public static bool isNewGame { get; set; }
+
     #region Player Actions
     public static void ConsumeEnergy()
     {

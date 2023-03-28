@@ -132,19 +132,20 @@ public class Land : MonoBehaviour, ITimeTracker
                 switch (toolType)
                 {
                     case ToolsData.ToolType.shovel:
-                        SwitchLandStatus(LandStatus.PLANTABLE);
-                        //Suena audio de pala
-                        AudioManager.instance.ShovelSound();
-                        //Gasta energía
-                        PlayerStats.ConsumeEnergy();
+                        if (landStatus != LandStatus.PLANTABLE) //Si el estado no es plantable (es decir, no se ha usado a pala)
+                        {
+                            SwitchLandStatus(LandStatus.PLANTABLE);
+                            //Suena audio de pala
+                            AudioManager.instance.ShovelSound();
+                            //Gasta energía
+                            PlayerStats.ConsumeEnergy();
+                        }
                         break;
-
                     case ToolsData.ToolType.waterCan:
                         //Agua que le quedaría al jugador tras regar
                         float playerWaterAfterActing = PlayerStats.water - 10;
-
                         //Condición de regar
-                        if (playerWaterAfterActing >= 0)
+                        if (playerWaterAfterActing >= 0 && landStatus == LandStatus.PLANTABLE) //Si se tiene agua y el estatus es plantable (ya se usó la pala)
                         {
                             //Suena audio de agua
                             AudioManager.instance.WaterSound();
