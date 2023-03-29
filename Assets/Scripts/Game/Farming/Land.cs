@@ -105,91 +105,95 @@ public class Land : MonoBehaviour, ITimeTracker
     //Al seleccionar el parche de tierra con el mouse
     private void OnMouseDown()
     {
-        //Energía que le quedaría al jugador tras hacer la acción
-        float playerEnergyAfterActing = PlayerStats.playerEnergy - 5;
-
-        //Si el jugador tiene energía, se continua
-        if(playerEnergyAfterActing >= 0)
+        //Evitamos que se interactué con la tierra si está abierto el inventario
+        if(UIManager.instance.uiOpened == false)
         {
-            playerAnimator.SetTrigger("tool");
+            //Energía que le quedaría al jugador tras hacer la acción
+            float playerEnergyAfterActing = PlayerStats.playerEnergy - 5;
 
-            //Checamos la herramienta que se tiene en la mano
-            ItemData toolSlot = InventoryManager2.instance.equipedTool;
-
-            //Si no se tiene nada equipado, terminamos la función
-            if (toolSlot == null)
+            //Si el jugador tiene energía, se continua
+            if (playerEnergyAfterActing >= 0)
             {
-                return;
-            }
+                playerAnimator.SetTrigger("tool");
 
-            //Intentamos castear la info del item en el slot equipado
-            ToolsData equipementTool = toolSlot as ToolsData;
+                //Checamos la herramienta que se tiene en la mano
+                ItemData toolSlot = InventoryManager2.instance.equipedTool;
 
-            if (equipementTool != null)
-            {
-                ToolsData.ToolType toolType = equipementTool.toolType;
-
-                switch (toolType)
+                //Si no se tiene nada equipado, terminamos la función
+                if (toolSlot == null)
                 {
-                    case ToolsData.ToolType.shovel:
-                        if (landStatus != LandStatus.PLANTABLE) //Si el estado no es plantable (es decir, no se ha usado a pala)
-                        {
-                            SwitchLandStatus(LandStatus.PLANTABLE);
-                            //Suena audio de pala
-                            AudioManager.instance.ShovelSound();
-                            //Gasta energía
-                            PlayerStats.ConsumeEnergy();
-                        }
-                        break;
-                    case ToolsData.ToolType.waterCan:
-                        //Agua que le quedaría al jugador tras regar
-                        float playerWaterAfterActing = PlayerStats.water - 10;
-                        //Condición de regar
-                        if (playerWaterAfterActing >= 0 && landStatus == LandStatus.PLANTABLE) //Si se tiene agua y el estatus es plantable (ya se usó la pala)
-                        {
-                            //Suena audio de agua
-                            AudioManager.instance.WaterSound();
-                            SwitchLandStatus(LandStatus.WATERED);
-                            //Gasta energía
-                            PlayerStats.ConsumeEnergy();
-                            //Gasta agua
-                            PlayerStats.UseWater();
-                        }
-                        else if(playerWaterAfterActing < 0)
-                        {
-                            UIManager.instance.PopUpWarning("¡Necesitas rellenar tu regadera de agua!");
-                        }
-                        
-                        break;
+                    return;
                 }
-                return;
 
+                //Intentamos castear la info del item en el slot equipado
+                ToolsData equipementTool = toolSlot as ToolsData;
+
+                if (equipementTool != null)
+                {
+                    ToolsData.ToolType toolType = equipementTool.toolType;
+
+                    switch (toolType)
+                    {
+                        case ToolsData.ToolType.shovel:
+                            if (landStatus != LandStatus.PLANTABLE) //Si el estado no es plantable (es decir, no se ha usado a pala)
+                            {
+                                SwitchLandStatus(LandStatus.PLANTABLE);
+                                //Suena audio de pala
+                                AudioManager.instance.ShovelSound();
+                                //Gasta energía
+                                PlayerStats.ConsumeEnergy();
+                            }
+                            break;
+                        case ToolsData.ToolType.waterCan:
+                            //Agua que le quedaría al jugador tras regar
+                            float playerWaterAfterActing = PlayerStats.water - 10;
+                            //Condición de regar
+                            if (playerWaterAfterActing >= 0 && landStatus == LandStatus.PLANTABLE) //Si se tiene agua y el estatus es plantable (ya se usó la pala)
+                            {
+                                //Suena audio de agua
+                                AudioManager.instance.WaterSound();
+                                SwitchLandStatus(LandStatus.WATERED);
+                                //Gasta energía
+                                PlayerStats.ConsumeEnergy();
+                                //Gasta agua
+                                PlayerStats.UseWater();
+                            }
+                            else if (playerWaterAfterActing < 0)
+                            {
+                                UIManager.instance.PopUpWarning("¡Necesitas rellenar tu regadera de agua!");
+                            }
+
+                            break;
+                    }
+                    return;
+
+                }
+
+                //Intentamos castear la info de la semilla equipada en el slot de equipado
+                SeedData seedTool = toolSlot as SeedData;
+
+                //Las condiciones para que se pueda plantar una semilla son:
+                //Se está usando una bolsa de semillas (objeto tipo SeedData)
+                //El estado de la tierra debe estar listo para sembrar o regado
+                //No hay otra planta sembrada
+                if (seedTool != null && landStatus != LandStatus.SOIL && cropPlanted == null)
+                {
+                    SpawnCrop();
+
+                    //Plantamos la planta
+                    cropPlanted.Plant(id, seedTool);
+                    //Sonamos sonido de semilla
+                    AudioManager.instance.SeedSound();
+                }
+
+                //Gasta energía
+                PlayerStats.ConsumeEnergy();
             }
-
-            //Intentamos castear la info de la semilla equipada en el slot de equipado
-            SeedData seedTool = toolSlot as SeedData;
-
-            //Las condiciones para que se pueda plantar una semilla son:
-            //Se está usando una bolsa de semillas (objeto tipo SeedData)
-            //El estado de la tierra debe estar listo para sembrar o regado
-            //No hay otra planta sembrada
-            if (seedTool != null && landStatus != LandStatus.SOIL && cropPlanted == null)
+            //Sino, se da aviso de que no se tiene energía
+            else if (playerEnergyAfterActing < 0)
             {
-                SpawnCrop();
-
-                //Plantamos la planta
-                cropPlanted.Plant(id, seedTool);
-                //Sonamos sonido de semilla
-                AudioManager.instance.SeedSound();
+                UIManager.instance.PopUpWarning("¡No tienes más energía! Será mejor que comas algo...");
             }
-
-            //Gasta energía
-            PlayerStats.ConsumeEnergy();
-        }
-        //Sino, se da aviso de que no se tiene energía
-        else if (playerEnergyAfterActing < 0)
-        {
-            UIManager.instance.PopUpWarning("¡No tienes más energía! Será mejor que comas algo...");
         }
     }
 

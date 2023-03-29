@@ -305,7 +305,7 @@ MonoBehaviour:
   water: {fileID: 7748959005471165345}
   sparkles: {fileID: 7604411221795145981}
   soilSelector: {fileID: 619811099955803865}
-  soilPatchRenderer: {fileID: 0}
+  soilPatchRenderer: {fileID: 3067643000244261200}
   id: 0
   landStatus: 0
   cropPrefab: {fileID: 4937059579975597407, guid: 9f04ac39e381ffb4ca1129d1e61a73e4,

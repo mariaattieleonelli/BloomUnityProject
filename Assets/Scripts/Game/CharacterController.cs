@@ -74,22 +74,27 @@ public class CharacterController : MonoBehaviour
         //Si se tiene herramienta equipada
         if(InventoryManager2.instance.equipedTool != null)
         {
-            //Muestra herramientas en la mano del jugador
-            if (InventoryManager2.instance.equipedTool.itemName.Equals("Pala"))
-            {
-                playersShovel.SetActive(true);
-                playersWateringCan.SetActive(false);
-            }
-            else if (InventoryManager2.instance.equipedTool.itemName.Equals("Regadera"))
-            {
-                playersWateringCan.SetActive(true);
-                playersShovel.SetActive(false);
-            }
-            else
-            {
-                playersWateringCan.SetActive(false);
-                playersShovel.SetActive(false);
-            }
+            ShowPlayerTools();
+        }
+    }
+
+    private void ShowPlayerTools()
+    {
+        //Muestra herramientas en la mano del jugador
+        if (InventoryManager2.instance.equipedTool.itemName.Equals("Pala"))
+        {
+            playersShovel.SetActive(true);
+            playersWateringCan.SetActive(false);
+        }
+        else if (InventoryManager2.instance.equipedTool.itemName.Equals("Regadera"))
+        {
+            playersWateringCan.SetActive(true);
+            playersShovel.SetActive(false);
+        }
+        else
+        {
+            playersWateringCan.SetActive(false);
+            playersShovel.SetActive(false);
         }
     }
 
@@ -101,13 +106,19 @@ public class CharacterController : MonoBehaviour
             //Se guarda el valor de energía que otorga
             int energyGain = InventoryManager2.instance.equipedItem.energyAmount;
 
-            //Se elimina el item de la mano
-            InventoryManager2.instance.equipedItem = null;
+            float energyAfterEating = PlayerStats.playerEnergy + energyGain;
 
-            //Actualiza el item en mano
-            InventoryManager2.instance.RenderHandItem();
+            //Evita que tengamos más de 100 de vida
+            if (energyAfterEating <= 100)
+            {
+                //Se elimina el item de la mano
+                InventoryManager2.instance.equipedItem = null;
 
-            PlayerStats.GainEnergy(energyGain);
+                //Actualiza el item en mano
+                InventoryManager2.instance.RenderHandItem();
+
+                PlayerStats.GainEnergy(energyGain);
+            }
         }
     }
 
@@ -143,6 +154,22 @@ public class CharacterController : MonoBehaviour
                     if (mouseHit.transform.tag == "planta")
                     {
                         AudioManager.instance.HarvestSound();
+
+                        Debug.Log(mouseHit.transform.name);
+
+                        //SOLO PARA PODER CUMPLIR CON EL TUTORIAL
+                        if(mouseHit.transform.name == "Aloe (1)(Clone)")
+                        {
+                            TutorialManager.instance.grownAloe ++;
+                        }
+                        else if (mouseHit.transform.name == "Cactus(Clone)")
+                        {
+                            TutorialManager.instance.grownCactus ++;
+                        }
+                        else if (mouseHit.transform.name == "Chamomile(Clone)")
+                        {
+                            TutorialManager.instance.grownChamomille ++;
+                        }
                     }
                 }
 

@@ -5,8 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScreen : MonoBehaviour
 {
+    public static LoadingScreen instance { get; private set; }
+
     public GameObject loadingPanel;
     public Image progressBar;
+
+    public void Awake()
+    {
+        //si hay otra instancia, destruir la extra
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     public void LoadLevel(string sceneToLoad)
     {

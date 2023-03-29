@@ -112,8 +112,8 @@ Material:
     - _ZWriteControl: 0
     - _opacity: 0.9
     m_Colors:
-    - _BaseColor: {r: 0.9433962, g: 0, b: 0.190469, a: 1}
-    - _Color: {r: 0.9433962, g: 0, b: 0.19046897, a: 1}
+    - _BaseColor: {r: 0.33962262, g: 0.24492896, b: 0.078497685, a: 1}
+    - _Color: {r: 0.3396226, g: 0.24492893, b: 0.07849767, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _fresnelColor: {r: 0.0209534, g: 0.33962256, b: 0.0016019968, a: 0}

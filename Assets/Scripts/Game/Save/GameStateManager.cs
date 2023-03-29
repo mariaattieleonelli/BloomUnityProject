@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,7 +57,6 @@ public class GameStateManager : MonoBehaviour
         //Cultivos
         LandManager.farmData = new System.Tuple<List<LandSaveState>, List<CropSaveState>>(save.landData, save.cropData);
 
-        //TEMPORAL; DEBE IR AL INICIO DEL JUEGO
         if (LandManager.farmData != null)
         {
             //Carga la información guardada

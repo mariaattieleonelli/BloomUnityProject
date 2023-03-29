@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static int money { get; private set; } = 70;
-    public static float playerEnergy { get; private set; } = 100;
+    public static int money { get; set; } = 70;
+    public static float playerEnergy { get;set; } = 100;
 
-    public static float water { get; private set; } = 100;
+    public static float water { get; set; } = 100;
 
     public static float sfxVolume { get; private set; }
     public static float musicVolume { get; private set; }
@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
     #region Player Actions
     public static void ConsumeEnergy()
     {
-        playerEnergy -= 5;
+        playerEnergy -= 2;
 
         //Actualiza en la UI los stats del jugador
         UIManager.instance.RenderPlayerStats();

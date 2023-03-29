@@ -15,10 +15,6 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     //Determinamos a qué sección del inventario pertenece el slot
     public InventoryType inventoryType;
-    public enum InventoryType
-    {
-        Item, Tool
-    }
 
     public void Display(ItemData itemToDisplay)
     {
@@ -52,5 +48,10 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     public void AssignIndex(int slotIndex)
     {
         this.slotIndex = slotIndex;
+    }
+
+    public enum InventoryType
+    {
+        Item, Tool
     }
 }

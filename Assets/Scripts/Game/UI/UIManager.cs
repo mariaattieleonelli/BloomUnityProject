@@ -5,13 +5,11 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-//Link para objetos clickeados tras botones
-//https://
-//answers.unity.com/questions/1220418/object-behind-button-is-clicked-too.html*/
-
 public class UIManager : MonoBehaviour, ITimeTracker
 {
     public static UIManager instance { get; private set; }
+
+    public bool uiOpened = false;
 
     //Son la UI de los slots en el inventario
     public InventorySlot[] toolSlots;
@@ -74,6 +72,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     private void Start()
     {
+        uiOpened = false;
         RenderInventory(); //Actualiza inventario y muestra
         AssignSlotIndexes(); //Asigna los index a la tierra
         UIManager.instance.RenderPlayerStats(); //Actualiza en la UI los stats del jugador
@@ -86,6 +85,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            UiOpenBool();
             TogglePausePanel();
         }
 
@@ -171,6 +171,18 @@ public class UIManager : MonoBehaviour, ITimeTracker
         inventorypanel.SetActive(!inventorypanel.activeSelf);
 
         RenderInventory();
+    }
+
+    public void UiOpenBool()
+    {
+        if (uiOpened == true)
+        {
+            uiOpened = false;
+        }
+        else if (uiOpened == false)
+        {
+            uiOpened = true;
+        }
     }
 
     public void TogglePausePanel()
@@ -273,13 +285,16 @@ public class UIManager : MonoBehaviour, ITimeTracker
     //Muestra stats del jugador
     public void RenderPlayerStats()
     {
-        //Muestra el dinero del jugador
-        moneyText.text = "$" + PlayerStats.money;
+        if(energyBar != null & energyPercentage != null & moneyText != null & waterLeft != null)
+        {
+            //Muestra el dinero del jugador
+            moneyText.text = "$" + PlayerStats.money;
 
-        energyPercentage.text = PlayerStats.playerEnergy.ToString();
+            energyPercentage.text = PlayerStats.playerEnergy.ToString();
 
-        energyBar.fillAmount = PlayerStats.playerEnergy / 100;
+            energyBar.fillAmount = PlayerStats.playerEnergy / 100;
 
-        waterLeft.fillAmount = PlayerStats.water / 100;
+            waterLeft.fillAmount = PlayerStats.water / 100;
+        }
     }
 }
