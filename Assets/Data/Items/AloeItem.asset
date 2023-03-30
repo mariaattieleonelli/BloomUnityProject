@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Aloe
   itemIcon: {fileID: 21300000, guid: 87ac3f179a97922478683423ac6cd4d3, type: 3}
-  energyAmount: 5
+  energyAmount: 10
   income: 10
   cost: 0
   gameModel: {fileID: 6719131193065141099, guid: 3b95b190cbf3c40499969e9868fa458d,

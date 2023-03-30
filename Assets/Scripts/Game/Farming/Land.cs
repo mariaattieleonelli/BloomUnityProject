@@ -258,19 +258,15 @@ public class Land : MonoBehaviour, ITimeTracker
             }
         }
 
-        //Si existe un cultivo
-        if(cropPlanted != null)
-        {
-            //Particulas que indican si ya está para cosecharse la planta
-            if (cropPlanted.cropState == CropBehaviour.CropState.HARVESTABLE)
-            {
-                sparkles.SetActive(true);
-            }
-            else if(cropPlanted.cropState != CropBehaviour.CropState.HARVESTABLE && landStatus == LandStatus.SOIL)
-            {
-                sparkles.SetActive(false);
-            }
-        }
-
+        ////Si existe un cultivo
+        //if(cropPlanted != null)
+        //{
+        //    //Particulas que indican si ya está para cosecharse la planta
+        //    if (cropPlanted.cropState == CropBehaviour.CropState.HARVESTABLE)
+        //    {
+        //        sparkles.SetActive(true);
+        //    }
+        //}
+        
     }
 }

@@ -288,7 +288,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
         if(energyBar != null & energyPercentage != null & moneyText != null & waterLeft != null)
         {
             //Muestra el dinero del jugador
-            moneyText.text = "$" + PlayerStats.money;
+            moneyText.text = "Abono: " + PlayerStats.money;
 
             energyPercentage.text = PlayerStats.playerEnergy.ToString();
 

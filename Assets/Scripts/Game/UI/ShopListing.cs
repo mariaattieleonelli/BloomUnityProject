@@ -18,7 +18,7 @@ public class ShopListing : MonoBehaviour, IPointerClickHandler
         this.itemData = itemData;
         itemIcon.sprite = itemData.itemIcon;
         nameText.text = itemData.itemName;
-        costText.text = "$" + itemData.cost;
+        costText.text = "Abono necesario: " + itemData.cost;
     }
     public virtual void OnPointerClick(PointerEventData eventData)
     {

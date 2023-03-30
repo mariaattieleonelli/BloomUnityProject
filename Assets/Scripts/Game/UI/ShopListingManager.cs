@@ -59,14 +59,14 @@ public class ShopListingManager : MonoBehaviour
         //Revisamos que el dinero del jugador sea suficiente
         if(playerMoneyLeft < 0)
         {
-            costCalculationText.text = "No tienes dinero suficiente";
+            costCalculationText.text = "No tienes abono suficiente";
             //No permite interactuar con el botón de aceptar
             purchaseButton.interactable = false;
             return;
         }
         //Si sí tiene dinero suficiente
         purchaseButton.interactable = true;
-        costCalculationText.text = "$" + PlayerStats.money + ">" + playerMoneyLeft;
+        costCalculationText.text = "Abono:" + PlayerStats.money + ">" + playerMoneyLeft;
     }
 
     //Se compra el item y se cierra la confirmación
