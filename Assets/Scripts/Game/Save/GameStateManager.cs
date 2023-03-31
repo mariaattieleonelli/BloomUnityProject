@@ -31,9 +31,6 @@ public class GameStateManager : MonoBehaviour
         List<LandSaveState> landData = LandManager.farmData.Item1;
         List<CropSaveState> cropData = LandManager.farmData.Item2;
 
-        //Recupera info del inventario
-
-
         //Recupera estado del time stamp
         Timestamp timestamp = TimeManager.instance.GetTimeStamp();
 
@@ -43,6 +40,7 @@ public class GameStateManager : MonoBehaviour
 
     public void SaveGame()
     {
+        LandManager.instance.SaveFarmData();
         SaveManager.Save(ExportSaveState());
     }
 
@@ -57,12 +55,12 @@ public class GameStateManager : MonoBehaviour
         //Cultivos
         LandManager.farmData = new System.Tuple<List<LandSaveState>, List<CropSaveState>>(save.landData, save.cropData);
 
-        if (LandManager.farmData != null)
-        {
-            //Carga la información guardada
-            LandManager.instance.ImportLandData(LandManager.farmData.Item1); //El item 1 de la tupla, que trae la información de la tierra
-            LandManager.instance.ImportCropData(LandManager.farmData.Item2); //El item 2 de la tupla, que trae la información de los cultivos
-        }
+        //if (LandManager.farmData != null)
+        //{
+        //    //Carga la información guardada
+        //    LandManager.instance.ImportLandData(LandManager.farmData.Item1); //El item 1 de la tupla, que trae la información de la tierra
+        //    LandManager.instance.ImportCropData(LandManager.farmData.Item2); //El item 2 de la tupla, que trae la información de los cultivos
+        //}
 
         //Player stats
         PlayerStats.LoadStats(save.money, save.playerEnergy, save.water);
